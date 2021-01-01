@@ -14,7 +14,7 @@ import { withAuth } from './hoc/withAuth'
 import { withAdminAuth } from './hoc/withAdminAuth'
 
 //pages
-import {Homepage, Registration, Shop, Login, Admin} from './Pages/index'
+import {Homepage, Registration, Shop, Login, Admin, Recovery} from './Pages/index'
 
 
 
@@ -39,7 +39,11 @@ class App extends Component {
 
   componentDidMount() {
     this.authListener = auth.onAuthStateChanged(userAuth => {
-      if(!userAuth) return;
+      if(!userAuth) {
+        this.setState({
+          ...initialState
+        });
+      };
 
       this.setState({
         currentUser: userAuth
@@ -55,7 +59,7 @@ class App extends Component {
 
   render() {
     const { currentUser } = this.state;
-    
+
     return (
       
       <div className="jumbotron jumbotron-fluid">
@@ -66,13 +70,14 @@ class App extends Component {
             <Route exact path="/" component={Homepage} />
             <Route path="/registration" component={Registration} />
             <Route path="/shop" component={Shop} />
-            <Route path="/login" render={() => currentUser ? <Redirect to="/" /> : (
+            <Route path="/login" 
+              render={() => currentUser ? <Redirect to="/" /> : (
               <Login />
             )} />
             <Route path="/admin"  render={() => (
               <Admin />
             )} />
-              
+            <Route path="/recovery" render={() => <Recovery />} />
           </Switch>
         </div>
       </div>  

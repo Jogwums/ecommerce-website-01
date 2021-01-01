@@ -1,0 +1,23 @@
+:root{
+    --darkShadow: 0px 4px 2px rgba(0,0,0,0.3);
+    --darkShadowDeep: 3px 6px 12px rgba(0,0,0,0.6);
+    --lightShadow: 0px 4px 2px rgba(0,0,0,0.1);
+}
+
+.authWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    min-height: 30vh;
+    width: 100%;
+    
+    text-align: center;
+
+}
+.authWrapper .wrap{
+    padding: 2rem;
+    box-shadow: var(--darkShadowDeep);
+    margin-top: 2rem;
+}

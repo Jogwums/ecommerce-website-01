@@ -1,43 +1,46 @@
-import React, { useState } from 'react'
-import { Button } from '../../globalStyles'
-import './styles.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 import { signInUser } from './../../redux/User/userActions'
-import { signInWithGoogle } from '../../firebase/firebaseUtils'
+import { auth, signInWithGoogle } from '../../firebase/firebaseUtils'
 import { useDispatch, useSelector } from 'react-redux'
 
+import AuthWrapper from '../../components/AuthWrapper/index'
 import FormInput from '../Forms/FormInput';
+import { Button } from '../../globalStyles'
 
 
 const SignIn = (props) => {
     const dispatch = useDispatch
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
 
 
     const resetForm = () => {
         setEmail('')
         setPassword('')
-
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        try{
 
+            await auth.signInWithEmailAndPassword(email, password);
+            resetForm();
+
+        } catch(err){
+            //console.log(err)
+        }
     }
 
-    const handleChange = (e) => {
-        setEmail(e.target.value)
-
-    }
+    const configAuthWrapper = {
+        headline: 'Login'
+    };
 
         return (
-            <div className="sign-in">
-                <div className="wrap">
-                    <h2>LOGIN</h2>
-    
+            <AuthWrapper {...configAuthWrapper}>
                     <div className="form-wrap">
                         <form onSubmit={handleSubmit} action="">
                             <div className="email-signIn">
@@ -45,7 +48,7 @@ const SignIn = (props) => {
                             <FormInput  
                                 type="email"
                                 name="email"
-                                onChange={handleChange}
+                                handleChange={e => setEmail(e.target.value)}
                                 value={email}
                                 placeholder="Email"
                                 
@@ -53,32 +56,33 @@ const SignIn = (props) => {
                                 <FormInput  
                                 type="password"
                                 name="password"
-                                onChange={handleChange}
+                                handleChange={e => setPassword(e.target.value)}
                                 value={password}
                                 placeholder="Password"
                                 
                                 />
-                                <FormInput  
-                                type="password"
-                                name="confirmPassword"
-                                onChange={handleChange}
-                                value={confirmPassword}
-                                placeholder="Password Check"
                                 
-                                />
-                                <Button className="button">
-                                    Register
+                                <Button
+                                    onClick={signInUser} 
+                                    className="button">
+                                    Go
                                 </Button>
                             </div>
+                                {/* sign-in with google */}
                             <div className="social-signIn">
                                 <Button onClick={signInWithGoogle}>
                                     Sign In with Google
                                 </Button>
                             </div>
+                            {/* forgot password  */}
+                            <div className="links">
+                                <Link to="/recovery">
+                                    FORGOT PASSWORD ?
+                                </Link>
+                            </div>
                         </form>
                     </div>
-                </div>
-            </div>
+            </AuthWrapper>
         )
     }
 

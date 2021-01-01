@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import { connect } from 'react-redux';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Nav, NavbarContainer, NavLogo, 
          NavIcon, MobileIcon, NavMenu, 
@@ -7,6 +8,9 @@ import { Nav, NavbarContainer, NavLogo,
 
 import {IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles'
+
+//import auth from firebase utils
+import { auth } from './../../firebase/firebaseUtils'
 
 
 const Navbar = (props) => {
@@ -23,6 +27,7 @@ const Navbar = (props) => {
         setClick(false)
     }
 
+    //show diff button on screen resize
     const showButton = () => {
         if(window.innerWidth <= 960){
             setButton(false)
@@ -37,7 +42,7 @@ const Navbar = (props) => {
 
     window.addEventListener('resize', showButton);
 
-
+    //end of show diff button on screen resize
 
     return (
         <>
@@ -46,7 +51,7 @@ const Navbar = (props) => {
                <NavbarContainer>
                    <NavLogo to="/" onClick={closeMobileMenu}>
                        <NavIcon />
-                       SHOPTYSTOP
+                       Store
                    </NavLogo>
                    <MobileIcon onClick={handleClick}>
                        { click ? <FaTimes /> : <FaBars />}
@@ -69,15 +74,29 @@ const Navbar = (props) => {
                        </NavItem>
                        <NavItemBtn>
                            {button ? (
-                               <NavBtnLink to="/registration">
-                                   <Button primary>
-                                       SIGN UP
-                                   </Button>
-                               </NavBtnLink>
+                               <>
+                               {
+                                   currentUser ? (
+                                    <NavBtnLink to="/registration">
+                                    <Button primary>
+                                        SIGN UP
+                                    </Button>
+                                    </NavBtnLink>
+                                   ) : (
+                                    <NavBtnLink to="/">
+                                        <Button fontBig primary 
+                                            onClick={() => auth.signOut()}>
+                                            LOG OUT
+                                        </Button>
+                                    </NavBtnLink>
+                                   )
+                               }
+                               </>
                            ) : ( <>
                                { currentUser && (
                                 <NavBtnLink to="/shop">
-                                    <Button fontBig primary >
+                                    <Button fontBig primary 
+                                        onClick={() => auth.signOut()}>
                                         LOG OUT
                                     </Button>
                                 </NavBtnLink>
