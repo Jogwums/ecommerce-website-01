@@ -1,27 +1,83 @@
+import { Component } from 'react';
+import {connect} from 'react-redux'
 import 'bootstrap'
-
-import {Switch, Route} from 'react-router-dom'
-
-import {Homepage, Registration, Shop} from './Pages/index'
-
+import {auth} from './firebase/firebaseUtils'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar2/Navbar'
+
+// components
+import Navbar from './components/Navbar2/Navbar';
+import AdminToolbar from './components/AdminToolbar'
+
+//hoc
+import { withAuth } from './hoc/withAuth'
+import { withAdminAuth } from './hoc/withAdminAuth'
+
+//pages
+import {Homepage, Registration, Shop, Login, Admin} from './Pages/index'
 
 
 
-function App() {
-  return (
-    <div className="jumbotron jumbotron-fluid">
-      <Navbar />
-      <div className="main">
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/registration" component={Registration} />
-          <Route path="/shop" component={Shop} />
-        </Switch>
-      </div>
-    </div>  
-  );
+
+
+const initialState = {
+  currentUser: null
+}
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      ...initialState,
+
+    };
+
+  }
+
+  authListener = null;
+
+
+  componentDidMount() {
+    this.authListener = auth.onAuthStateChanged(userAuth => {
+      if(!userAuth) return;
+
+      this.setState({
+        currentUser: userAuth
+      })
+    })
+  }
+
+  componentWillUnmount() {
+    this.authListener(); //to unsubscribe
+  }
+  
+
+
+  render() {
+    const { currentUser } = this.state;
+    
+    return (
+      
+      <div className="jumbotron jumbotron-fluid">
+        <AdminToolbar />
+        <Navbar />
+        <div className="main">
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/registration" component={Registration} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/login" render={() => currentUser ? <Redirect to="/" /> : (
+              <Login />
+            )} />
+            <Route path="/admin"  render={() => (
+              <Admin />
+            )} />
+              
+          </Switch>
+        </div>
+      </div>  
+    )
+  }
 }
 
 export default App;

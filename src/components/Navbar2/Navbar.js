@@ -9,10 +9,11 @@ import {IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
+    const { currentUser } = props;
 
     const handleClick = () =>{
         setClick(!click)
@@ -68,17 +69,28 @@ const Navbar = () => {
                        </NavItem>
                        <NavItemBtn>
                            {button ? (
-                               <NavBtnLink to="/sign-up">
+                               <NavBtnLink to="/registration">
                                    <Button primary>
                                        SIGN UP
                                    </Button>
                                </NavBtnLink>
-                           ) : (
-                               <NavBtnLink to="/sign-up">
-                                   <Button fontBig primary >
-                                       SIGN IN
-                                   </Button>
-                               </NavBtnLink>
+                           ) : ( <>
+                               { currentUser && (
+                                <NavBtnLink to="/shop">
+                                    <Button fontBig primary >
+                                        LOG OUT
+                                    </Button>
+                                </NavBtnLink>
+                               )}
+                               {
+                                   !currentUser && (
+                                    <NavBtnLink to="/login">
+                                        <Button fontBig primary >
+                                            LOG IN
+                                        </Button>
+                                     </NavBtnLink>
+                                )}
+                            </>
                            )}
                        </NavItemBtn>
                    </NavMenu>

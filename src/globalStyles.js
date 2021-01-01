@@ -34,10 +34,11 @@ export const Container = styled.div`
 export const Button = styled.button`
     border-radius: 4px;
     white-space: nowrap;
-    background: ${({primary}) => (primary ? '#4b59f7' : '#0467fb')};
+    background: ${({primary}) => (primary ? '#4b59f7' : '#32a852')};
+    background: ${({secondary}) => (secondary ? '#32a852' : '#4b59f7')};
     padding: ${({big}) => (big? '12px 64px' : '10px 20px')};
     color: #fff;
-    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+    font-size: ${({fontBig}) => (fontBig ? '22px' : '16px')};
     outline: none;
     border: 0;
     cursor: pointer;
