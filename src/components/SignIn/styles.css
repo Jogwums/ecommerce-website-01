@@ -36,6 +36,18 @@
     background-color: red;
 }
 .links{
+    display: block;
+    width: 100%;
     margin-top: 1rem;
-
+    color: black;
+    padding: .5rem 1rem;
+}
+.links a{
+    color: black;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+}
+.links a:hover{
+    background-color: rebeccapurple;
+    color: white;
 }

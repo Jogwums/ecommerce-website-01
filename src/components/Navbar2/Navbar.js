@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Nav, NavbarContainer, NavLogo, 
          NavIcon, MobileIcon, NavMenu, 
@@ -12,12 +12,20 @@ import { Button } from '../../globalStyles'
 //import auth from firebase utils
 import { auth } from './../../firebase/firebaseUtils'
 
+const mapState = ({ user }) => ({
+    currentUser: user.currentUser
+});
+
+
 
 const Navbar = (props) => {
+    const { currentUser } = useSelector(mapState);
+
+
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
-    const { currentUser } = props;
+    
 
     const handleClick = () =>{
         setClick(!click)

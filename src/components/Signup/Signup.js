@@ -35,12 +35,14 @@ const Signup = props => {
         try{
             const { user} = await auth.createUserWithEmailAndPassword(email, password);
 
-            await handleUserProfile(user, { displayName});
+            await handleUserProfile(user, { displayName });
 
+            console.log(displayName);
+            
             resetForm();
 
         } catch(err){
-            //console.log(err)
+            console.log(err)
         }
     }
 
@@ -54,7 +56,7 @@ const Signup = props => {
                     <div className="formWrapper">
                     {
                         errors.length > 0 &&(
-                            <ul>
+                            <ul className="errormsg">
                                 {
                                     errors.map((err, index) => {
                                         return (
@@ -67,8 +69,8 @@ const Signup = props => {
                             </ul>
                         )
                     }
-                    
-                        <form >
+
+                        <form onSubmit={handleFormSubmit} >
                             <FormInput  
                                 type="text"
                                 name="displayName"
@@ -102,7 +104,7 @@ const Signup = props => {
                                 />
                                 <Button 
                                     type="submit"
-                                    onClick={handleFormSubmit} className="button">
+                                    className="button">
                                     Register
                                 </Button>
                         </form>  
