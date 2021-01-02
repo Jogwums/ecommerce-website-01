@@ -19,7 +19,8 @@ const mapState = ({ user }) => ({
 
 
 const Navbar = (props) => {
-    const { currentUser } = useSelector(mapState);
+    const { currentUser } = props;
+    // const { currentUser } = useSelector(mapState);
 
 
     const [click, setClick] = useState(false);
@@ -80,7 +81,25 @@ const Navbar = (props) => {
                                Products
                            </NavLinks>
                        </NavItem>
-                       <NavItemBtn>
+                       <NavItem>
+                       { currentUser && (
+                                <NavLinks to="/">
+                                    <div 
+                                        onClick={() => auth.signOut()}>
+                                        LOG OUT
+                                    </div>
+                                </NavLinks>
+                               )}
+                               {
+                                   !currentUser && (
+                                    <NavLinks to="/login">
+                                        <>
+                                            LOG IN
+                                        </>
+                                     </NavLinks>
+                                )}
+                       </NavItem>
+                       {/* <NavItemBtn>
                            {button ? (
                                <>
                                {
@@ -101,25 +120,10 @@ const Navbar = (props) => {
                                }
                                </>
                            ) : ( <>
-                               { currentUser && (
-                                <NavBtnLink to="/shop">
-                                    <Button fontBig primary 
-                                        onClick={() => auth.signOut()}>
-                                        LOG OUT
-                                    </Button>
-                                </NavBtnLink>
-                               )}
-                               {
-                                   !currentUser && (
-                                    <NavBtnLink to="/login">
-                                        <Button fontBig primary >
-                                            LOG IN
-                                        </Button>
-                                     </NavBtnLink>
-                                )}
+                               
                             </>
                            )}
-                       </NavItemBtn>
+                       </NavItemBtn> */}
                    </NavMenu>
                </NavbarContainer>
            </Nav>

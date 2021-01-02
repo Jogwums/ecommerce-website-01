@@ -45,4 +45,4 @@ export const handleUserProfile = async (userAuth, additionalData) => {
         }
     }
     return userRef;
-}
+};

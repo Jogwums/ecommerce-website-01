@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import {connect} from 'react-redux'
 import 'bootstrap'
-import {auth} from './firebase/firebaseUtils'
+import {auth, handleUserProfile} from './firebase/firebaseUtils'
 import {Switch, Route, Redirect} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,6 +12,10 @@ import AdminToolbar from './components/AdminToolbar'
 //hoc
 import { withAuth } from './hoc/withAuth'
 import { withAdminAuth } from './hoc/withAdminAuth'
+
+//layouts 
+import MainLayout from './layouts/MainLayout'
+import HomePageLayout from './layouts/HomePageLayout'
 
 //pages
 import {Homepage, Registration, Shop, Login, Admin, Recovery} from './Pages/index'
@@ -38,15 +42,22 @@ class App extends Component {
 
 
   componentDidMount() {
-    this.authListener = auth.onAuthStateChanged(userAuth => {
-      if(!userAuth) {
-        this.setState({
-          ...initialState
-        });
+    this.authListener = auth.onAuthStateChanged( async userAuth => {
+      if(userAuth) {
+        const userRef = await handleUserProfile(userAuth);
+        userRef.onSnapshot(snapshot =>{
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          })
+        })
+        
       };
 
       this.setState({
-        currentUser: userAuth
+        ...initialState
       })
     })
   }
@@ -63,19 +74,28 @@ class App extends Component {
     return (
       
       <div className="jumbotron jumbotron-fluid">
-        <AdminToolbar />
-        <Navbar />
-        <div className="main">
+        <div className="">
           <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/registration" component={Registration} />
-            <Route path="/shop" component={Shop} />
+            <Route exact path="/" render={() => (
+              <HomePageLayout currentUser={currentUser}>
+                <Homepage />
+              </HomePageLayout>
+            )} />
+            <Route path="/registration" render={() => (
+              <MainLayout currentUser={currentUser}>
+                <Registration />
+              </MainLayout>
+            )} />
             <Route path="/login" 
               render={() => currentUser ? <Redirect to="/" /> : (
-              <Login />
+              <MainLayout currentUser={currentUser}>
+                <Shop />
+              </MainLayout>
             )} />
             <Route path="/admin"  render={() => (
-              <Admin />
+              <MainLayout currentUser={currentUser}>
+                <Admin />
+              </MainLayout>
             )} />
             <Route path="/recovery" render={() => <Recovery />} />
           </Switch>

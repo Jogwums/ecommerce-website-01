@@ -5,9 +5,8 @@ import ItemCards from './../components/index'
 const Shop = () => {
     return (
         <Container>
-            <h1>Hello from shop</h1>
+            <h1>Login to your account </h1>
             <ItemCards />
-            <Button primary fontBig >Buy me</Button>
         </Container>
     )
 }

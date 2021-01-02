@@ -21,7 +21,7 @@ const Directory = (props) => {
                 backgroundImage: `url(${shopWomen})`
             }}>
             
-                <Link to="/shop" className="btn btn-primary">Shop Women</Link>
+                <Link to="/" className="btn btn-primary">Shop Women</Link>
             
             </div>
             </div>
