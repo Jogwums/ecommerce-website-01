@@ -72,13 +72,13 @@ const Navbar = (props) => {
                            </NavLinks>
                        </NavItem>
                        <NavItem>
-                           <NavLinks to="/services">
-                               Services
+                           <NavLinks to="/products">
+                               Products
                            </NavLinks>
                        </NavItem>
                        <NavItem>
-                           <NavLinks to="/products">
-                               Products
+                           <NavLinks to="/registration">
+                               SIGN UP
                            </NavLinks>
                        </NavItem>
                        <NavItem>

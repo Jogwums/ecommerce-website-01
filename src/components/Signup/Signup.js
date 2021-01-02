@@ -32,6 +32,12 @@ const Signup = props => {
             return;
         }
 
+        if( displayName === '' || password === ''){
+            const err = ['No empty fields allowed'];
+            setErrors(err)
+            return;
+        }
+
         try{
             const { user} = await auth.createUserWithEmailAndPassword(email, password);
 

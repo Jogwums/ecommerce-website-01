@@ -26,8 +26,10 @@ const SignIn = (props) => {
         e.preventDefault();
 
         try{
-
             await auth.signInWithEmailAndPassword(email, password);
+            setEmail(email)
+            setPassword(password)
+            
             resetForm();
 
         } catch(err){
@@ -65,7 +67,7 @@ const SignIn = (props) => {
                                 <Button
                                     onClick={signInUser} 
                                     className="button">
-                                    Go
+                                    LOGIN
                                 </Button>
                             </div>
                                 {/* sign-in with google */}
