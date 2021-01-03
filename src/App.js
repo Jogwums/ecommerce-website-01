@@ -20,7 +20,7 @@ import MainLayout from './layouts/MainLayout'
 import HomePageLayout from './layouts/HomePageLayout'
 
 //pages
-import {Homepage, Registration, Shop, Login, Dashboard, Admin, Recovery} from './Pages/index'
+import {Homepage, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment} from './Pages/index'
 
 // use redux store instead of state 
 
@@ -87,6 +87,11 @@ class App extends Component {
                   <Admin />
                 </MainLayout>
               </WithAdminAuth>
+            )} />
+            <Route path="/payment"  render={() => (
+                <MainLayout >
+                  <Payment />
+                </MainLayout>
             )} />
             <Route path="/recovery" render={() => <Recovery />} />
           </Switch>

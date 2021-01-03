@@ -1,0 +1,17 @@
+.paymentDetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    min-height: 30vh;
+    width: 100%;
+    
+    text-align: center;
+}
+
+.paymentDetails .group{
+    padding: 2rem;
+    box-shadow: var(--darkShadowDeep);
+
+}
