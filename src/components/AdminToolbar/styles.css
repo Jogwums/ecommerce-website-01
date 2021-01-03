@@ -1,25 +1,27 @@
 .admin-toolbar{
     display: inline-block;
     background-color: black;
-    font-size: 1.5rem;
     margin: 0 auto;
-    padding: 5px 10px;
+    padding: 0 10px;
     width: 100%;
 
+    box-sizing: border-box;
 }
 
 .admin-toolbar ul{ list-style: none; text-decoration: none; float: right; }
 
 .admin-toolbar li{
     display: inline-block;
+    padding: 0px;
 }
 
 .admin-toolbar li a{
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     line-height: 1;
-    padding: 10px;
-    color: rgb(48, 46, 37);
+    padding: 5px 10px;
+    margin: 5px 0 0 0;
+    color: white;
     transition: all .4s ease-in-out;
 
 }

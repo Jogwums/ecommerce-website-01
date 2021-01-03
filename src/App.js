@@ -9,19 +9,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { setCurrentUser } from './redux/User/userActions'
 
 // components
-import Navbar from './components/Navbar2/Navbar';
 import AdminToolbar from './components/AdminToolbar'
 
 //hoc
 import { withAuth } from './hoc/withAuth'
-import { withAdminAuth } from './hoc/withAdminAuth'
+import WithAdminAuth from './hoc/withAdminAuth'
 
 //layouts 
 import MainLayout from './layouts/MainLayout'
 import HomePageLayout from './layouts/HomePageLayout'
 
 //pages
-import {Homepage, Registration, Shop, Login, Admin, Recovery} from './Pages/index'
+import {Homepage, Registration, Shop, Login, Dashboard, Admin, Recovery} from './Pages/index'
 
 // use redux store instead of state 
 
@@ -75,10 +74,19 @@ class App extends Component {
                 <Shop />
               </MainLayout>
             )} />
+            <Route path="/dashboard"  render={() => (
+              <withAdminAuth>
+                <MainLayout >
+                  <Dashboard />
+                </MainLayout>
+              </withAdminAuth>
+            )} />
             <Route path="/admin"  render={() => (
-              <MainLayout >
-                <Admin />
-              </MainLayout>
+              <WithAdminAuth>
+                <MainLayout >
+                  <Admin />
+                </MainLayout>
+              </WithAdminAuth>
             )} />
             <Route path="/recovery" render={() => <Recovery />} />
           </Switch>

@@ -1,4 +1,3 @@
-import { withRouter } from 'react-router-dom'
 import  useAuth  from './../customHooks/useAuth'
 
 const WithAuth = props => useAuth(props) && props.children;
