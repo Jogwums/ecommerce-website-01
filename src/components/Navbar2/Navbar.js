@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Nav, NavbarContainer, NavLogo, 
          NavIcon, MobileIcon, NavMenu, 
          NavItem, NavLinks, NavBtnLink, 
-         NavItemBtn  } from './NavbarElements'
+         NavItemBtn, UserId  } from './NavbarElements'
 
 import {IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles'
@@ -20,13 +20,11 @@ const mapState = ({ user }) => ({
 
 const Navbar = (props) => {
     const { currentUser } = props;
-    // const { currentUser } = useSelector(mapState);
 
+    // const { currentUser } = useSelector(mapState);
 
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-
-    
 
     const handleClick = () =>{
         setClick(!click)
@@ -99,6 +97,9 @@ const Navbar = (props) => {
                                      </NavLinks>
                                 )}
                        </NavItem>
+                       <NavItem>
+                               { currentUser && (<UserId >Welcome <br /> { currentUser.displayName }</UserId>) }
+                       </NavItem>
                        {/* <NavItemBtn>
                            {button ? (
                                <>
@@ -132,6 +133,13 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar
+const mapStateToProps = ({ user }) => ({
+    currentUser: user.currentUser
+});
+
+const mapDispatchToProps = () => {
+
+}
+export default connect(mapStateToProps, null)(Navbar)
 
 

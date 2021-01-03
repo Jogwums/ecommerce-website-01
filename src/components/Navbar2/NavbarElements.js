@@ -143,3 +143,18 @@ export const NavBtnLink = styled(Link)`
     outline: none;
 
 `;
+
+export const UserId = styled.h3`
+    font-size: 1rem;
+    background-color: white;
+    color: rebeccapurple;
+    padding: 0 1rem;
+    margin: 0;
+    border: none;
+
+    &:hover{
+        background-color: rebeccapurple;
+        color: white;
+        border: none;
+    }
+`;
