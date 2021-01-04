@@ -26,12 +26,20 @@ const PaymentDetails = () => {
 
     }
 
-    const handleShipping = props => {
-
+    const handleShipping = event => {
+        const { name, value} = event.target;
+        setShippingDetails({
+            ...shippingDetails,
+            [name]: value
+        })
     }
 
-    const handleBilling = props => {
-
+    const handleBilling = event => {
+        const { name, value } = event.target;
+        setBillingDetails({
+            ...billingDetails,
+            [name]: value
+        })
     }
 
     return (<>
@@ -46,37 +54,48 @@ const PaymentDetails = () => {
                         placeholder="Recipient Name"
                         name="recipientName"
                         type="text"
-
+                        value={recipientName}
+                        handleChange={e => setRecipientname(e.target.value)}
                     />
 
                     <FormInput 
                         placeholder="line1"
                         name="line1"
                         type="text"
+                        value={shippingDetails.line1}
+                        handleChange={event => handleShipping(event)}
 
                     />
                     <FormInput 
                         placeholder="line2"
                         name="line2"
                         type="text"
+                        value={shippingDetails.line2}
+                        handleChange={event => handleShipping(event)}
 
                     />
                     <FormInput 
                         placeholder="city"
                         name="city"
                         type="text"
+                        value={shippingDetails.city}
+                        handleChange={event => handleShipping(event)}
 
                     />
                     <FormInput 
                         placeholder="state"
                         name="state"
                         type="text"
+                        value={shippingDetails.state}
+                        handleChange={event => handleShipping(event)}
 
                     />
                     <FormInput 
                         placeholder="postal_code"
                         name="postal_code"
                         type="text"
+                        value={shippingDetails.postal_code}
+                        handleChange={event => handleShipping(event)}
 
                     />
                     <div className="formRow countrySelect">
@@ -102,6 +121,8 @@ const PaymentDetails = () => {
                             placeholder="Name on Card"
                             name="NameOnCard"
                             type="text"
+                            value={nameOnCard}
+                            handleChange={e => setNameOnCard(e.target.value)}
 
                         />
 
@@ -109,30 +130,40 @@ const PaymentDetails = () => {
                             placeholder="line1"
                             name="line1"
                             type="text"
+                            value={billingDetails.line1}
+                            handleChange={event => handleBilling(event)}
 
                         />
                         <FormInput 
                             placeholder="line2"
                             name="line2"
                             type="text"
+                            value={billingDetails.line2}
+                            handleChange={event => handleBilling(event)}
 
                         />
                         <FormInput 
                             placeholder="city"
                             name="city"
                             type="text"
+                            value={billingDetails.city}
+                            handleChange={event => handleBilling(event)}
 
                         />
                         <FormInput 
                             placeholder="state"
                             name="state"
                             type="text"
+                            value={billingDetails.state}
+                            handleChange={event => handleBilling(event)}
 
                         />
                         <FormInput 
                             placeholder="postal_code"
                             name="postal_code"
                             type="text"
+                            value={billingDetails.postal_code}
+                            handleChange={event => handleBilling(event)}
 
                         />
                         <div className="formRow countrySelect">
