@@ -59,3 +59,13 @@ a, a:hover{
     padding: 8px;
     border-color: saddlebrown;
 }
+
+@media (max-width: 480px){
+    .slider-item{
+        width: 50%;
+
+    }
+    .slider-item a{
+        top: 80%; left: 30%;
+    }
+}

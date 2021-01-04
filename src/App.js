@@ -22,7 +22,7 @@ import HomePageLayout from './layouts/HomePageLayout'
 import SiteBackground from './layouts/SiteBackground'
 
 //pages
-import {Homepage, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment} from './Pages/index'
+import {Homepage, Homepage2, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment} from './Pages/index'
 
 // use redux store instead of state 
 
@@ -75,7 +75,9 @@ class App extends Component {
             <Route path="/login" 
               render={() => currentUser ? <Redirect to="/" /> : (
               <MainLayout >
-                <Shop />
+                <SiteBackground>
+                  <Shop />
+                </SiteBackground>
               </MainLayout>
             )} />
             <Route path="/dashboard"  render={() => (

@@ -1,7 +1,7 @@
 import React from 'react'
 import './sitebackground.css'
 
-import Background from './../Assets/images/profile.jpg' 
+import Background from './../Assets/images/siteBg2.jpg' 
 
 const SiteBackground = (props) => {
     return (

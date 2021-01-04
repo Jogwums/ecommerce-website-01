@@ -4,7 +4,7 @@ import React from 'react'
 const Login = () => {
     return (
         <>
-            <h1>You are Signed In</h1>
+            <h1 className="text-center">You are Signed In</h1>
             
         </>
     )

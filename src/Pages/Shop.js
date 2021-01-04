@@ -4,8 +4,7 @@ import ItemCards from './../components/index'
 
 const Shop = () => {
     return (
-        <Container>
-            <h1>Login to your account </h1>
+        <Container className="text-center">
             <ItemCards />
         </Container>
     )
