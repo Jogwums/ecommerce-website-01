@@ -31,6 +31,17 @@ export const Container = styled.div`
     }
 `;
 
+export const CardGroup = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    width: 100%;
+
+`;
+
 export const Button = styled.button`
     border-radius: 4px;
     white-space: nowrap;

@@ -1,19 +1,19 @@
 import React from 'react'
-import img1 from '../../Assets/images/svg-1.svg'
-import img2 from '../../Assets/images/svg-2.svg'
+// import img1 from '../../Assets/images/svg-1.svg'
+// import img2 from '../../Assets/images/svg-2.svg'
 
-const ItemCards = ({img}) => {
+const ItemCards = ({name, img, desc, rating, price}) => {
     return (
         <>
-        <div className="card" style={{"width": "35rem"}}>
-            <img src={img1} className="card-img-top" alt="..." />
+        <div className="card" style={{"width": "35rem", "marginLeft":"5px"}}>
+            <img src={img} className="card-img-top" alt="..." />
             <div className="card-body">
-                <h5 className="card-title">Product</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 className="card-title">{name}</h5>
+                <p className="card-text">{desc}</p>
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">Rating: </li>
-                <li className="list-group-item">Price: </li>
+                <li className="list-group-item">Rating: {rating} </li>
+                <li className="list-group-item">Price: {price} </li>
             </ul>
             <div className="card-body">
                 <a href="/" className="btn btn-primary card-link">More Details</a>

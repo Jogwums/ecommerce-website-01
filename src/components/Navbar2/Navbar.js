@@ -70,7 +70,7 @@ const Navbar = (props) => {
                            </NavLinks>
                        </NavItem>
                        <NavItem>
-                           <NavLinks to="/">
+                           <NavLinks to="/product">
                                Products
                            </NavLinks>
                        </NavItem>

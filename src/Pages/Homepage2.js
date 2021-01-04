@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Carousel from '../components/Carousel/Carousel'
+import Carousel from '../components/Carousel/ProductCarousel/Carousel'
 import Directory from '../components/Directory/Directory'
 
 const Homepage2 = () => {

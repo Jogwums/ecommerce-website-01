@@ -11,6 +11,7 @@ import { setCurrentUser } from './redux/User/userActions'
 // components
 import AdminToolbar from './components/AdminToolbar'
 import Carousel from './components/Carousel/Carousel'
+import Carousel2 from './components/Carousel/ProductCarousel/Carousel'
 
 //hoc
 import { withAuth } from './hoc/withAuth'
@@ -23,7 +24,7 @@ import SiteBackground from './layouts/SiteBackground'
 
 //pages
 import {Homepage, Homepage2, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment} from './Pages/index'
-
+import { Men } from './Pages/Products'
 // use redux store instead of state 
 
 class App extends Component {
@@ -99,7 +100,18 @@ class App extends Component {
                   <Payment />
                 </MainLayout>
             )} />
+            <Route path="/product" render={() => (
+                <MainLayout>
+                  <Carousel2 />
+                </MainLayout>
+            )} />
+            <Route path="/men" render={() => (
+                <MainLayout>
+                  <Men />
+                </MainLayout>
+            )} />
             <Route path="/recovery" render={() => <Recovery />} />
+            
             <Route path="/slider" render={() => <Carousel />} />
           </Switch>
         </div>

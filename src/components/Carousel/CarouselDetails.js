@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import './styles.css'
 
-const Details = ({shop, name}) => {
+const Details = ({shop, name, link}) => {
     return (
         <div className="slider">
             <div className="slider-wrap">
@@ -13,7 +13,7 @@ const Details = ({shop, name}) => {
                 style={{
                     backgroundImage: `url(${shop})`
                 }}>
-                    <Link to="/" className="btn btn-primary">{name}</Link>
+                    <Link to={`/${link}`} className="btn btn-primary">{name}</Link>
                 </div>
             {/* <div
             className="item"
