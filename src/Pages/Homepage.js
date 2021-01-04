@@ -6,7 +6,7 @@ import Directory from '../components/Directory/Directory'
 const Homepage = () => {
     return (
         <div>
-            <Directory />
+            <Carousel />
         </div>
     )
 }

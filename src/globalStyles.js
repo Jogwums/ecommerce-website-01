@@ -36,17 +36,20 @@ export const Button = styled.button`
     white-space: nowrap;
     background: ${({primary}) => (primary ? '#4b59f7' : '#32a852')};
     background: ${({secondary}) => (secondary ? '#32a852' : '#4b59f7')};
+    background: ${({pay}) => (pay ? '#000' : '#4b59f7')};
     padding: ${({big}) => (big? '12px 64px' : '10px 20px')};
     color: #fff;
     font-size: ${({fontBig}) => (fontBig ? '22px' : '16px')};
     outline: none;
     border: 0;
     cursor: pointer;
+    width: ${({full}) => (full ? '100%' : '')};
 
     &:hover{
         transition: all 0.3s ease-out;
         background: #fff;
         background: ${({ primary }) => ( primary ? '#0467fb' : '#4b59f7')};
+        background: ${({pay}) => (pay ? '#0c6c9c' : '#4b59f7')};
     }
 
     @media (max-width: 960px) {

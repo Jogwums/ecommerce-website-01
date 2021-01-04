@@ -10,6 +10,7 @@ import { setCurrentUser } from './redux/User/userActions'
 
 // components
 import AdminToolbar from './components/AdminToolbar'
+import Carousel from './components/Carousel/Carousel'
 
 //hoc
 import { withAuth } from './hoc/withAuth'
@@ -18,6 +19,7 @@ import WithAdminAuth from './hoc/withAdminAuth'
 //layouts 
 import MainLayout from './layouts/MainLayout'
 import HomePageLayout from './layouts/HomePageLayout'
+import SiteBackground from './layouts/SiteBackground'
 
 //pages
 import {Homepage, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment} from './Pages/index'
@@ -65,7 +67,9 @@ class App extends Component {
             )} />
             <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : (
               <MainLayout >
-                <Registration />
+                <SiteBackground>
+                  <Registration />
+                </SiteBackground>
               </MainLayout>
             )} />
             <Route path="/login" 
@@ -94,6 +98,7 @@ class App extends Component {
                 </MainLayout>
             )} />
             <Route path="/recovery" render={() => <Recovery />} />
+            <Route path="/slider" render={() => <Carousel />} />
           </Switch>
         </div>
       </div>  

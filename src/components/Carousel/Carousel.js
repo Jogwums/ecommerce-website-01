@@ -1,24 +1,23 @@
 import React from 'react'
+import CarouselDetails from './CarouselDetails'
+// import ItemCards from '../ItemCards/ItemCards'
 
-import ItemCards from '../ItemCards/ItemCards'
+//images
+import shopMen from '../../Assets/images/Dir1.jpg'
+import shopWomen from '../../Assets/images/Dir2.jpg'
+
+import './styles.css'
 
 const Carousel = () => {
     return (
         <>
-            <div id="carouselExampleControls" className="carousel slide my-5 mx-5 d-flex items-center" data-bs-ride="carousel">
-            <div className="carousel-inner text-center">
-                <div className="carousel-item d-flex  active w-100">
-                    <ItemCards />
-                    <ItemCards />
-                    
+            <div id="carouselExampleControls" className="carousel slide my-0 mx-0 d-flex items-center" data-bs-ride="carousel">
+            <div className="carousel-inner ">
+                <div className="carousel-item active ">
+                    <CarouselDetails shop={shopMen} name="Shop Men" />
                 </div>
                 <div className="carousel-item">
-                    <ItemCards />
-                    <ItemCards />
-                </div>
-                <div className="carousel-item">
-                    <ItemCards />
-                    
+                    <CarouselDetails shop={shopWomen} name="Shop Women" />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">

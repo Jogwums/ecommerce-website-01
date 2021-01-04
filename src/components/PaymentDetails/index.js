@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CardElement, useElements } from '@stripe/react-stripe-js'
 import FormInput from '../Forms/FormInput'
 import {Button} from './../../globalStyles' 
 import './styles.css'
@@ -15,14 +16,25 @@ const initialDetails = {
 }
 
 const PaymentDetails = () => {
+    const elements = useElements();
     const [shippingDetails, setShippingDetails] = useState({...initialDetails});
     const [billingDetails, setBillingDetails] = useState({...initialDetails});
     const [recipientName, setRecipientname] = useState('');
     const [nameOnCard, setNameOnCard] = useState('');
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const cardElements = elements.getElement('card');
+
+        if(
+            !shippingDetails.line1 || !shippingDetails.city || !shippingDetails.state || 
+            !shippingDetails.postal_code || !shippingDetails.country || 
+            !billingDetails.line1 || !billingDetails.city || 
+            !billingDetails.state || !billingDetails.postal_code || !billingDetails.country || !recipientName 
+            || !nameOnCard
+        ){ return;}
+
 
     }
 
@@ -40,6 +52,17 @@ const PaymentDetails = () => {
             ...billingDetails,
             [name]: value
         })
+    }
+
+    //cardElements Configuration //see stripe docs 
+    const cardElementsConfig = {
+        iconStyle: 'solid',
+        style: {
+            base: {
+                fontSize: '24px'
+            }
+        },
+        hidePostalCode: true,
     }
 
     return (<>
@@ -179,6 +202,19 @@ const PaymentDetails = () => {
                             />
                         </div>
                     </div>
+
+                    <div className="group">
+                        <h2>
+                            Card Details
+                        </h2>
+
+                        <CardElement 
+                            cardElementsConfig
+
+                          />
+                    </div>
+
+                    <Button pay full type="submit">Pay Now</Button>
             </form>
         
         </div>

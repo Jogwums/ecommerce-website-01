@@ -70,7 +70,7 @@ const Navbar = (props) => {
                            </NavLinks>
                        </NavItem>
                        <NavItem>
-                           <NavLinks to="/products">
+                           <NavLinks to="/">
                                Products
                            </NavLinks>
                        </NavItem>
@@ -100,31 +100,7 @@ const Navbar = (props) => {
                        <NavItem>
                                { currentUser && (<UserId >Welcome <br /> { currentUser.displayName }</UserId>) }
                        </NavItem>
-                       {/* <NavItemBtn>
-                           {button ? (
-                               <>
-                               {
-                                   currentUser ? (
-                                    <NavBtnLink to="/registration">
-                                    <Button primary>
-                                        SIGN UP
-                                    </Button>
-                                    </NavBtnLink>
-                                   ) : (
-                                    <NavBtnLink to="/">
-                                        <Button fontBig primary 
-                                            onClick={() => auth.signOut()}>
-                                            LOG OUT
-                                        </Button>
-                                    </NavBtnLink>
-                                   )
-                               }
-                               </>
-                           ) : ( <>
-                               
-                            </>
-                           )}
-                       </NavItemBtn> */}
+                       
                    </NavMenu>
                </NavbarContainer>
            </Nav>
