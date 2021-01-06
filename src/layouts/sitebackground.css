@@ -12,19 +12,20 @@ html, body, #root{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-}
+} 
 a{
     text-decoration: none;
 }
 a, a:hover{
     transition: all .3s ease-in-out;
 }
+
 .background{
     height: 100vh;
     width: 100%;
-    min-width: 1200px;
     pointer-events: all;
 }
+
 .background-item{
     width: 100%;
     height: 100vh;
@@ -46,4 +47,4 @@ a, a:hover{
     z-index: -1;
 
     pointer-events: auto;
-}
+} 
