@@ -146,11 +146,12 @@ export const NavBtnLink = styled(Link)`
 
 export const UserId = styled.h3`
     font-size: 1rem;
-    background-color: white;
-    color: rebeccapurple;
+    background-color: transparent;
+    color: white;
     padding: 0 1rem;
     margin: 0;
     border: none;
+    box-shadow: 0px 4px 2px rgba(255,255,255,0.3);
 
     &:hover{
         background-color: rebeccapurple;

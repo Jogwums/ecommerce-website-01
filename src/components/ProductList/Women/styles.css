@@ -1,0 +1,60 @@
+.products{
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 2rem;
+    
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    min-height: 100vh;
+}
+.card-wrapper{
+    background-color: rgba(0,0,0,0.2);
+    padding: 2rem;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+
+}
+.card-content{
+    background-color:white;
+    color: purple;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction:column;
+    padding: 1rem 2rem;
+    box-shadow:  3px 6px 9px rgba(123,40,50);
+
+}
+.card-title{
+    text-align: center;
+    padding: 0 1rem;
+}
+.card-image-wrapper{
+    text-align: center;
+    padding:1rem auto;
+    
+}
+.btn{
+    margin: 0;
+    font-size: 1.5rem;
+    padding: .5rem;
+    border-radius: 6px;
+    cursor:pointer;
+}
+.btn-primary{
+    background-color: red;
+    color: white;
+}
+.card-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    max-width: 100%;
+}

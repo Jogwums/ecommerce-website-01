@@ -1,3 +1,4 @@
 import Men from './Men'
+import Women from './Women'
 
-export { Men }
+export { Men, Women }
