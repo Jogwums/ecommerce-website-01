@@ -74,6 +74,7 @@ const PaymentDetails = () => {
                     </h2>
 
                     <FormInput 
+                        required
                         placeholder="Recipient Name"
                         name="recipientName"
                         type="text"
@@ -82,6 +83,7 @@ const PaymentDetails = () => {
                     />
 
                     <FormInput 
+                        required
                         placeholder="line1"
                         name="line1"
                         type="text"
@@ -141,6 +143,7 @@ const PaymentDetails = () => {
                         </h2>
 
                         <FormInput 
+                            required
                             placeholder="Name on Card"
                             name="NameOnCard"
                             type="text"
@@ -150,6 +153,7 @@ const PaymentDetails = () => {
                         />
 
                         <FormInput 
+                            required
                             placeholder="line1"
                             name="line1"
                             type="text"

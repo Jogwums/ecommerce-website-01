@@ -57,8 +57,7 @@ class App extends Component {
     const { currentUser } = this.props;
 
     return (
-      
-      <div className="jumbotron jumbotron-fluid">
+      <div className="jumbotron ">
         <div className="">
           <Switch>
             <Route exact path="/" render={() => (

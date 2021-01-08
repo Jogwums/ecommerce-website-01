@@ -3,6 +3,8 @@ import ItemCards from './ItemCards/ItemCards'
 import Men from './ProductList/Men'
 import Women from './ProductList/Women'
 
-export { SignIn as default } 
-export { ItemCards, Men, Women }
 
+export { SignIn as default } 
+
+export { ItemCards, Men, Women }
+ 
