@@ -2,6 +2,8 @@ import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../../../redux/Products/productActions'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../../redux/Cart/cartActions'
 
 //loader 
 import loader from '../../../Assets/loaders/loader1.gif'
@@ -9,16 +11,39 @@ import loader from '../../../Assets/loaders/loader1.gif'
 //styling
 import './styles.css'
 
-const Women = ({ productData, fetchProducts }) => {
 
+
+const Women = (props) => {
+    const { productData } = props;
+    const { fetchProducts } = props;
+    
     useEffect(() => {
         fetchProducts()
     }, [fetchProducts])
 
+    const dispatch = useDispatch();
+
+    
+
+
+    const handleAddToCart = async (productData) => {
+
+        console.log('adding to cart');
+        if(!productData){
+            console.log('waiting for productData');
+        }
+        
+        await dispatch(
+            addProduct({...productData})
+        )
+        console.log('added to cart');
+        
+        
+    }    
 
     return (
         productData.loading ? (
-            <h2>Loading
+            <h2 className="text-center">Loading
                 <img src={loader} alt="loader" width="50" height="50" />
             </h2>
             
@@ -40,9 +65,10 @@ const Women = ({ productData, fetchProducts }) => {
                                             <p className="card-price">Price: {`\u20A6`}{product.price}</p>
                                         </span>
                                         
-                                        <button className="btn btn-primary">
-                                            <Link to="/login">Buy</Link>
+                                        <button className="btn btn-primary" onClick={() => handleAddToCart()}>
+                                            Add To Cart
                                         </button>
+                                        
                                     </div>
                                    </div>
                                 </>)

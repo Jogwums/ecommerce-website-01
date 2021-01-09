@@ -2,7 +2,7 @@ import React from 'react'
 // import img1 from '../../Assets/images/svg-1.svg'
 // import img2 from '../../Assets/images/svg-2.svg'
 
-const ItemCards = ({name, img, desc, rating, price}) => {
+const ItemCards = ({name, img, desc, rating, price, handleAddToCart}) => {
     return (
         <>
         <div className="card" style={{"width": "35rem", "marginLeft":"5px"}}>
@@ -16,8 +16,8 @@ const ItemCards = ({name, img, desc, rating, price}) => {
                 <li className="list-group-item">Price: {price} </li>
             </ul>
             <div className="card-body">
-                <a href="/" className="btn btn-primary card-link">More Details</a>
-                <a href="/" className="btn btn-danger card-link">Buy Now</a>
+                <button href="/" className="btn btn-primary card-link">More Details</button>
+                <button className="btn btn-danger card-link" onClick={() => handleAddToCart()}>Add To Cart</button>
             </div>
         </div>
         </>

@@ -20,4 +20,6 @@
     padding: 2rem;
     box-shadow: var(--darkShadowDeep);
     margin-top: 2rem;
+
+    background-color: whitesmoke;
 }

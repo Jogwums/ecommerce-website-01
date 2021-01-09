@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { CardElement, useElements } from '@stripe/react-stripe-js'
+import { useStripe } from '@stripe/react-stripe-js'
+import { useHistory } from 'react-router-dom'
 import FormInput from '../Forms/FormInput'
 import {Button} from './../../globalStyles' 
+import { apiInstance } from '../../Utils'
+// import stripe from 'stripe'
 import './styles.css'
 
 import { CountryDropdown } from 'react-country-region-selector'
@@ -16,7 +20,9 @@ const initialDetails = {
 }
 
 const PaymentDetails = () => {
+    const stripe = useStripe();
     const elements = useElements();
+    const history = useHistory();
     const [shippingDetails, setShippingDetails] = useState({...initialDetails});
     const [billingDetails, setBillingDetails] = useState({...initialDetails});
     const [recipientName, setRecipientname] = useState('');
@@ -35,8 +41,19 @@ const PaymentDetails = () => {
             || !nameOnCard
         ){ return;}
 
+        
+        apiInstance.post('/payments/create', {
+            amount: '',
+            shipping: {
+                name: recipientName,
+                address: {
+                    ...shippingDetails
+                }
+            }
+        }).then(({ data: clientSecrete}) => {
 
-    }
+        });
+    };
 
     const handleShipping = event => {
         const { name, value} = event.target;
@@ -64,6 +81,8 @@ const PaymentDetails = () => {
         },
         hidePostalCode: true,
     }
+
+    
 
     return (<>
         <div className="paymentDetails">

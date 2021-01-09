@@ -1,10 +1,12 @@
 
 .formWrapper{
     margin: 2rem auto 0;
+
 }
 
 .formWrapper .errormsg{
     list-style: none;
     color: red;
     font-size: larger;
+
 }

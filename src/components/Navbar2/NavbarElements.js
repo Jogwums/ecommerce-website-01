@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { FaShopify } from "react-icons/fa";
 
 export const Nav = styled.nav`
-background: #405679;
+/* background: #405679; */
+background: rebeccapurple;
 height: 5rem;
 display: flex;
 align-items: center; 
 justify-content: center;
-font-size: 1.2rem;
+font-size: 1.25rem;
 position: sticky;
 top: 0;
 z-index: 999;
@@ -70,12 +71,12 @@ export const NavMenu = styled.ul`
         height: 90vh;
         position: absolute;
         top: 5rem;
-        border: 2px double white;
+        border: 2px solid white;
 
         left: ${({click}) => (click ? 0 : '-100%')};
         opacity: 1;
         transition: all 0.8s ease;
-        background: #405679;
+        background: rebeccapurple;
         
     }
 `;
@@ -87,7 +88,7 @@ export const NavItem = styled.li`
     padding: 0; margin: 0;
 
     &:hover{
-        border-bottom: 2px solid #4b59f7;
+        /* border-bottom: 2px solid #fff; */
     }
 
     @media (max-width: 960px) {

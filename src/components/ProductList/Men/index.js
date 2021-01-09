@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../../redux/Cart/cartActions'
 
 import { CardGroup } from '../../../globalStyles'
 
@@ -24,12 +26,29 @@ const initialValue = {
 
 }
 
-const Men = () => {
+const Men = (props) => {
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = async (product) => {
+
+        console.log('adding to mens\'s cart');
+        if(!product){
+            console.log('waiting for productData');
+        }
+        
+        await dispatch(
+            addProduct(product)
+        )
+        console.log('added to men\'s cart');
+        
+        
+    } 
     const numbers = [1,2,3,4,5];
 
     return (
         <CardGroup >
-            {numbers.map(number => <ItemCards number {...initialValue.item1} />)}
+            {numbers.map(number => <ItemCards number {...initialValue.item1} handleAddToCart={handleAddToCart} />)}
         </CardGroup>
     )
 }

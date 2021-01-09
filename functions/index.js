@@ -10,6 +10,7 @@ const functions = require("firebase-functions");
 
 const express = require("express");
 const cors = require("cors");
+const stripe = require("stripe")("sk_test_51I5pQYGDBBAgUuzZ0bbd2ncxYaT8ufPwZ4NWiq5iUtngMFwdHPIzsQgxaWn59N79ApZYkp9x6wYXCKZYSjQgRoZT00CPDcrLtE")
 
 const app = express();
 
@@ -18,6 +19,21 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+app.get("/payments/create", (req, res) => {
+    try {
+
+    }
+    catch (err) {
+      res
+          .status(500)
+          .json({
+              statusCode: 500,
+              message: err.message,
+          });
+    }
+});
+
 
 app.get("*", (req, res) => {
   res

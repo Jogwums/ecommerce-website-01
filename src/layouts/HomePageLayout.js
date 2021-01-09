@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar2/Navbar'
+import Footer from '../components/Footer/Footer'
 import AdminToolbar from '../components/AdminToolbar'
 
 const HomePageLayout = (props) => {
@@ -8,6 +9,9 @@ const HomePageLayout = (props) => {
             <AdminToolbar />
             <Navbar {...props} />
                 {props.children}
+            <div className="footer">
+                <Footer />
+            </div>
         </div>
     )
 }
