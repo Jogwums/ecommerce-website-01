@@ -22,7 +22,8 @@ app.use(express.json());
 
 app.get("/payments/create", (req, res) => {
     try {
-
+      res
+        .send('this is', console.log(stripe));
     }
     catch (err) {
       res
