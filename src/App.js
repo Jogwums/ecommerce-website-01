@@ -114,7 +114,11 @@ class App extends Component {
                   <Women />
                 </MainLayout>
             )} />
-            <Route path="/recovery" render={() => <Recovery />} />
+            <Route path="/recovery" render={() => (
+              <MainLayout>
+                <Recovery />
+              </MainLayout>
+            )} />
             <Route path="*" render={() => <Error />} />
             <Route path="/slider" render={() => <Carousel />} />
           </Switch>

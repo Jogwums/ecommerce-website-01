@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Container } from '../../globalStyles';
 import { Link } from 'react-router-dom';
-import { FaShopify } from "react-icons/fa";
+import { FaShopify, FaShoppingBasket } from "react-icons/fa";
 
 export const Nav = styled.nav`
 /* background: #405679; */
@@ -160,3 +160,33 @@ export const UserId = styled.h3`
         border: none;
     }
 `;
+
+
+export const CartLogo = styled(FaShoppingBasket)`
+    margin: .5rem auto;
+    color: white;
+    
+`;
+
+export const CartItem = styled.button`
+    padding: .2rem .5rem;
+    border-radius: 6px;
+    border: none;
+    outline: 0;
+    margin-top: .5rem;
+    margin-right: .5rem;
+
+    background: purple;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    
+    &:hover ${CartLogo} {
+        margin: .5rem;
+        color: white;
+        z-index: 2;
+    }
+`;
+

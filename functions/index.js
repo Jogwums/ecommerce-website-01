@@ -20,10 +20,18 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get("/payments/create", (req, res) => {
-    try {
-      res
-        .send('this is', console.log(stripe));
+app.get("/payments/create", async (req, res) => {
+  try {
+    const { amount, shipping } = req.body;
+    const paymentIntent = await stripe.paymentIntents.create({
+      shipping,
+      amount,
+      currency: 'ngn'
+    });
+
+    res
+      .status(200)
+      .send(paymentIntent.client_secret);
     }
     catch (err) {
       res

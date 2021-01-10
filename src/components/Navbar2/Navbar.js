@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { Nav, NavbarContainer, NavLogo, 
          NavIcon, MobileIcon, NavMenu, 
          NavItem, NavLinks, NavBtnLink, 
-         NavItemBtn, UserId  } from './NavbarElements'
+         NavItemBtn, UserId, CartItem, CartLogo  } from './NavbarElements'
 
 import {IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles'
@@ -25,6 +25,7 @@ const Navbar = (props) => {
 
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
+    const [itemCount, setItemCount] = useState(0)
 
     const handleClick = () =>{
         setClick(!click)
@@ -96,6 +97,13 @@ const Navbar = (props) => {
                                         </>
                                      </NavLinks>
                                 )}
+                       </NavItem>
+                       <NavItem>
+                           { currentUser && (<NavItemBtn> 
+                                <CartItem>
+                                    <CartLogo /> {itemCount}
+                                </CartItem>
+                                </NavItemBtn>)}
                        </NavItem>
                        <NavItem>
                                { currentUser && (<UserId >Welcome <br /> { currentUser.displayName }</UserId>) }

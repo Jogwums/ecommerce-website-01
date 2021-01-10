@@ -31,7 +31,7 @@ export const fetchProducts = () => {
         axios.get('https://5fcf88c51f2374001663091f.mockapi.io/shop')
         // .then( res => console.log(res.data))
             .then(res => {
-            const products = res.data.splice(0,10)
+            const products = res.data.splice(0,20)
             dispatch(fetchProductsSuccess(products))
         })
         .catch(error => {

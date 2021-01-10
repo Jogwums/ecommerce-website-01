@@ -14,13 +14,13 @@ const EmailPassword = props => {
         
     }
         const configAuthWrapper = {
-            headline: 'Email Password'
+            headline: 'Recover your Password'
         }
 
         return (
             <AuthWrapper {...configAuthWrapper}>
-                <div className="formWrapper">
-                        <form >
+                <div className="formWrapper ">
+                        <form className="recovery">
                         
                                 <FormInput  
                                 type="email"
