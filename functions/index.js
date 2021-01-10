@@ -1,5 +1,5 @@
 const functions = require("firebase-functions");
-
+require("dotenv").config();
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -10,7 +10,7 @@ const functions = require("firebase-functions");
 
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")("sk_test_51I5pQYGDBBAgUuzZ0bbd2ncxYaT8ufPwZ4NWiq5iUtngMFwdHPIzsQgxaWn59N79ApZYkp9x6wYXCKZYSjQgRoZT00CPDcrLtE")
+const stripe = require("stripe")(process.env.API_KEY_STRIPE);
 
 const app = express();
 
