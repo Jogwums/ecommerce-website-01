@@ -19,13 +19,12 @@ const mapState = ({ user }) => ({
 
 
 const Navbar = (props) => {
-    const { currentUser } = props;
+    const { currentUser, cartItemCount } = props;
 
     // const { currentUser } = useSelector(mapState);
 
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-    const [itemCount, setItemCount] = useState(0)
 
     const handleClick = () =>{
         setClick(!click)
@@ -101,7 +100,7 @@ const Navbar = (props) => {
                        <NavItem>
                            { currentUser && (<NavItemBtn> 
                                 <CartItem>
-                                    <CartLogo /> {itemCount}
+                                    <CartLogo /> {cartItemCount}
                                 </CartItem>
                                 </NavItemBtn>)}
                        </NavItem>
@@ -117,8 +116,10 @@ const Navbar = (props) => {
     )
 }
 
-const mapStateToProps = ({ user }) => ({
-    currentUser: user.currentUser
+const mapStateToProps = ({ user, cartData }) => ({
+    currentUser: user.currentUser,
+    cartItemCount: cartData.count,
+
 });
 
 const mapDispatchToProps = () => {

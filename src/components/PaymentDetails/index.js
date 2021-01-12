@@ -86,7 +86,7 @@ const PaymentDetails = () => {
 
     return (<>
         <div className="paymentDetails">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="formWrap">
                 <div className="group">
                     <h2>
                     Shipping Address
@@ -236,8 +236,9 @@ const PaymentDetails = () => {
 
                           />
                     </div>
-
-                    <Button pay full type="submit">Pay Now</Button>
+                    <div className="center">
+                        <Button pay full type="submit">Pay Now</Button>
+                    </div>
             </form>
         
         </div>

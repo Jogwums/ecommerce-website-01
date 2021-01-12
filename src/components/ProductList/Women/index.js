@@ -14,8 +14,8 @@ import './styles.css'
 
 
 const Women = (props) => {
-    const { productData } = props;
-    const { fetchProducts } = props;
+    const { productData, fetchProducts, cartDataAll } = props;
+   
     
     useEffect(() => {
         fetchProducts()
@@ -27,18 +27,10 @@ const Women = (props) => {
 
 
     const handleAddToCart = async (productData) => {
-
-        console.log('adding to cart');
-        if(!productData){
-            console.log('waiting for productData');
-        }
-        
+        if(!productData){}
         await dispatch(
-            addProduct({...productData})
+            addProduct({...productData, ...cartDataAll})
         )
-        console.log('added to cart');
-        
-        
     }    
 
     return (
@@ -81,7 +73,8 @@ const Women = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        productData: state.products
+        productData: state.products,
+        cartDataAll: state.cartData
     }
 }
 

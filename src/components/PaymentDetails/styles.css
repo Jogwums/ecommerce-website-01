@@ -2,12 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row-reverse;
 
     min-height: 30vh;
-    width: 100%;
+    width: 90%;
     
+    margin: 0 auto;
+
     text-align: center;
+    
+}
+
+.paymentDetails .formWrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+
+    margin-bottom: 5rem;
 }
 
 .paymentDetails .group{
@@ -16,4 +27,37 @@
     padding: 2rem;
     box-shadow: var(--darkShadowDeep);
 
+}
+
+.paymentDetails .center{
+    position: absolute;
+    bottom: 20px;
+    left: 34.5%;
+
+    padding: 1rem;
+    margin-top: 2rem;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-self: center;
+
+    
+    width: 31%;
+
+}
+
+@media (max-width: 480px){
+    .paymentDetails .formWrap{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .paymentDetails .center{
+        position: unset;
+        margin: 0;
+
+        width: 100%;
+    }
 }
