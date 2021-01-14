@@ -24,7 +24,12 @@ const Women = (props) => {
     const dispatch = useDispatch();
 
     
+    const handleMoreDetails = async (cartDataAll) => {
+        if(!cartDataAll) return;
+        await dispatch(
 
+        )
+    }
 
     const handleAddToCart = async (productData) => {
         if(!productData){}
@@ -49,17 +54,25 @@ const Women = (props) => {
                             productData.products && 
                                 productData.products.map(product => <> 
                                    <div className="products-wrapper">
-                                   <div className="card-content">
-                                        <h2 className="card-title" key={product.id}>{product.description}</h2>
+                                     <div className="card-content">
                                         
                                         <span className="card-image-wrapper">
                                             <img className="card-image" src={product.images} alt={product.id} />
-                                            <p className="card-price">{`\u20A6`}{product.price}</p>
                                         </span>
                                         
-                                        <button className="btn btn-primary" onClick={() => handleAddToCart()}>
-                                            Add To Cart
-                                        </button>
+                                        <div className=" details">
+                                            <h2 className="card-title" key={product.id}>{product.name}</h2>
+                                            <p className="card-price">{`\u20A6`}{product.price}</p>
+                                        </div>
+                                        
+                                        <span className="btn_group">
+                                            <button className="btn btn-primary" onClick={() => handleAddToCart()}>
+                                                Add To Cart
+                                            </button>
+                                            <button className="btn btn-secondary small" onClick={() => handleMoreDetails()}>
+                                                More Details
+                                            </button>
+                                        </span>
                                         
                                     </div>
                                    </div>

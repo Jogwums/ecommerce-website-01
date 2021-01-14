@@ -5,10 +5,13 @@
 .products{
     background-color: rebeccapurple;
     color: white;
-    font-size: 2rem;
-    
+    font-size: 2rem;   
 }
+.products-wrapper{
+    padding: 0;
+    margin: 0 auto;
 
+}
 .card{
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +47,12 @@
 .products-wrapper:hover .card-content{
     box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
 }
+.card-content .details, .card-content:hover .details{
+    text-align: center;
+    box-shadow: none;
+
+}
+
 .card-title{
     text-align: center;
     padding: 0 1rem;
@@ -84,10 +93,16 @@
     outline: none;
 }
 .card-image{
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 140px;
     border-radius: 4px;
     max-width: 100%;
+}
+.btn_group{
+    width: 100%;
+    padding: 0;
+    
+
 }
 
 @media (max-width: 480px){
@@ -101,6 +116,10 @@
         padding: 4rem;
     }
     .card-title{
-        margin: -2rem 0 2rem 0;
+        margin: 2rem 0 2rem 0;
+    }
+    .small{
+        padding: .45rem .52rem;
+
     }
 }
