@@ -15,5 +15,6 @@ export const checkUserIsAdmin = currentUser => {
 //Utility function to deal with firebase function for payments
 
 export const apiInstance = axios.create({
-    baseURL: 'http://localhost:5001/my-ecommerce-website-fac9f/us-central1/api'
+    // baseURL: 'http://localhost:5001/my-ecommerce-website-fac9f/us-central1/api'
+    baseURL: 'https://us-central1-my-ecommerce-website-fac9f.cloudfunctions.net/api'
 });
