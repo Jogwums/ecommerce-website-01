@@ -54,7 +54,7 @@ const Women = (props) => {
                                         
                                         <span className="card-image-wrapper">
                                             <img className="card-image" src={product.images} alt={product.id} />
-                                            <p className="card-price">Price: {`\u20A6`}{product.price}</p>
+                                            <p className="card-price">{`\u20A6`}{product.price}</p>
                                         </span>
                                         
                                         <button className="btn btn-primary" onClick={() => handleAddToCart()}>

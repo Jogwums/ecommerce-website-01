@@ -1,3 +1,7 @@
+:root{
+    --primaryColor: #7555a1;
+    --secondaryColor: #F68B1E;
+}
 .products{
     background-color: rebeccapurple;
     color: white;
@@ -32,8 +36,13 @@
     display: flex;
     flex-direction:column;
     padding: 1rem 2rem;
-    box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
+    box-shadow:  3px 2px 3px rgba(0,0,0,0.1);
     margin-left: 1rem;
+
+    cursor: pointer;
+}
+.products-wrapper:hover .card-content{
+    box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
 }
 .card-title{
     text-align: center;
@@ -41,24 +50,43 @@
 }
 .card-image-wrapper{
     text-align: center;
-    padding:1rem auto;
+    padding: 1rem auto;
     
 }
+.card-price{
+    margin-top: 1rem;
+    font-size: 2rem;
+
+    border-top: 2px solid rgba(240, 238, 235, 0.5);
+    border-bottom: 2px solid rgba(240, 238, 235, 0.5);
+}
 .btn{
-    margin: 0;
+    margin: 1rem;
     font-size: 1.5rem;
-    padding: .5rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
     border-radius: 6px;
+    border: 2px solid var(--primaryColor);
     cursor:pointer;
 }
 .btn-primary{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color:  var(--primaryColor);
+}
+.btn-primary:hover{
+    border: 2px solid var(--primaryColor) ;
+    background-color: var(--primaryColor);
+    color:  #fff;
+}
+.btn-primary:focus{
+    background-color: lightgrey;
+    border: none;
+    outline: none;
 }
 .card-image{
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 4px;
     max-width: 100%;
 }
 
