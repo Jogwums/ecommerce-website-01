@@ -16,16 +16,16 @@ const Carousel = () => {
             <div id="carouselExampleControls" className="carousel slide my-0 mx-0 d-flex items-center" data-bs-ride="carousel">
             <div className="carousel-inner ">
                 <div className="carousel-item active ">
-                    <CarouselDetails shop={item1} name="Buy Winter Wear" />
+                    <CarouselDetails shop={item1} name="Buy Winter Wear" link="shop" />
                 </div>
                 <div className="carousel-item">
-                    <CarouselDetails shop={item2} name="Buy Clothes" />
+                    <CarouselDetails shop={item2} name="Buy Clothes" link='shop' />
                 </div>
                 <div className="carousel-item">
-                    <CarouselDetails shop={item3} name="Buy Electronics" />
+                    <CarouselDetails shop={item3} name="Buy Electronics" link='shop' />
                 </div>
                 <div className="carousel-item">
-                    <CarouselDetails shop={item4} name="Buy Travel Gear" link='login' />
+                    <CarouselDetails shop={item4} name="Buy Travel Gear" link='shop' />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">

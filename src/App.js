@@ -102,12 +102,12 @@ class App extends Component {
             )} />
             <Route path="/product" render={() => (
                 <MainLayout>
-                  <Carousel2 />
+                  <Women />
                 </MainLayout>
             )} />
-            <Route path="/men" render={() => (
+            <Route path="/shop" render={() => (
                 <MainLayout>
-                  <Men />
+                  <Women />
                 </MainLayout>
             )} />
             <Route path="/women" render={() => (
