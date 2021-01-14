@@ -98,16 +98,23 @@ const Navbar = (props) => {
                                 )}
                        </NavItem>
                        <NavItem>
-                           { currentUser && (<NavItemBtn> 
-                                <CartItem>
-                                    <CartLogo /> {cartItemCount}
-                                </CartItem>
-                                </NavItemBtn>)}
+                           
+                           { currentUser && (<NavLinks to="/cart">
+                                <NavItemBtn> 
+                                    <CartItem>
+                                        <CartLogo /> {cartItemCount}
+                                    </CartItem>
+                                </NavItemBtn>
+                                </NavLinks>)}
+                            
                        </NavItem>
                        <NavItem>
-                               { currentUser && (<UserId >Welcome <br /> { currentUser.displayName }</UserId>) }
-                       </NavItem>
-                       
+                               { currentUser && (<NavLinks>
+                               <UserId>
+                                   Welcome <br /> { currentUser.displayName }
+                               </UserId>
+                               </NavLinks>)}
+                        </NavItem>
                    </NavMenu>
                </NavbarContainer>
            </Nav>

@@ -152,7 +152,7 @@ export const UserId = styled.h3`
     padding: 0 1rem;
     margin: 0;
     border: none;
-    box-shadow: 0px 4px 2px rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 2px rgba(255,255,255,0.1);
 
     &:hover{
         background-color: rebeccapurple;
@@ -173,7 +173,6 @@ export const CartItem = styled.button`
     border-radius: 6px;
     border: none;
     outline: 0;
-    margin-top: .5rem;
     margin-right: .5rem;
 
     background: purple;

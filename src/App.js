@@ -23,7 +23,8 @@ import HomePageLayout from './layouts/HomePageLayout'
 import SiteBackground from './layouts/SiteBackground'
 
 //pages
-import {Homepage, Homepage2, Registration, Shop, Login, Dashboard, Admin, Recovery, Payment, Error} from './Pages/index'
+import {Homepage, Homepage2, Registration, Shop, Login,
+         Dashboard, Admin, Recovery, Payment, Error, CartPage} from './Pages/index'
 import { Men, Women } from './Pages/Products'
 // use redux store instead of state 
 
@@ -112,6 +113,11 @@ class App extends Component {
             <Route path="/women" render={() => (
                 <MainLayout>
                   <Women />
+                </MainLayout>
+            )} />
+            <Route path="/cart" render={() => (
+                <MainLayout>
+                  <CartPage />
                 </MainLayout>
             )} />
             <Route path="/recovery" render={() => (

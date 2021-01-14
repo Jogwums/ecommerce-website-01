@@ -8,6 +8,9 @@ import Recovery from './Recovery'
 import Dashboard from './Dashboard/index'
 import Payment from './Payment/Payment'
 import Error from './Error'
+import CartPage from './ShoppingCart/CartPage'
 
-export {Homepage, Homepage2, Registration, Shop, Login, Admin, Recovery, Dashboard, Payment, Error}
+export {Homepage, Homepage2, Registration, Shop,
+         Login, Admin, Recovery, Dashboard, Payment, 
+         Error, CartPage}
 
