@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { setCurrentUser } from './redux/User/userActions'
 
 // components
-import AdminToolbar from './components/AdminToolbar'
+// import AdminToolbar from './components/AdminToolbar'
 import Carousel from './components/Carousel/Carousel'
-import Carousel2 from './components/Carousel/ProductCarousel/Carousel'
+
 
 //hoc
-import { withAuth } from './hoc/withAuth'
+// import { withAuth } from './hoc/withAuth'
 import WithAdminAuth from './hoc/withAdminAuth'
 
 //layouts 
@@ -23,9 +23,9 @@ import HomePageLayout from './layouts/HomePageLayout'
 import SiteBackground from './layouts/SiteBackground'
 
 //pages
-import {Homepage, Homepage2, Registration, Shop, Login,
+import {Homepage, Registration, Shop,
          Dashboard, Admin, Recovery, Payment, Error, CartPage} from './Pages/index'
-import { Men, Women } from './Pages/Products'
+import { Women } from './Pages/Products'
 // use redux store instead of state 
 
 class App extends Component {
