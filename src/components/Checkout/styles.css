@@ -1,0 +1,21 @@
+.checkout{
+    color: purple;
+    padding: 2rem 10rem;
+    margin: 0 5rem auto;
+    min-height: 100vh;
+}
+.checkout h1{
+    text-align: center;
+}
+.checkout .cart{
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1rem;
+}
+
+.checkout .checkout-header{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+

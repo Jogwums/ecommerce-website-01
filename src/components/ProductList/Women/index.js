@@ -66,7 +66,7 @@ const Women = (props) => {
                                         </div>
                                         
                                         <span className="btn_group">
-                                            <button className="btn btn-primary" onClick={() => handleAddToCart()}>
+                                            <button className="btn btn-primary" onClick={() => handleAddToCart(product)}>
                                                 Add To Cart
                                             </button>
                                             <button className="btn btn-secondary small" onClick={() => handleMoreDetails()}>
