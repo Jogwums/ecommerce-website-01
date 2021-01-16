@@ -1,5 +1,5 @@
 import { cartTypes } from './cartTypes'
-// import { addProduct, reduceCartItem, reduceCartItem, clearCart } from './Cart_Utils'
+import { handleAddToCart } from './cartUtils'
 
 const INITIAL_STATE = {
     loading: false,
@@ -15,12 +15,10 @@ const CartReducer = (state = INITIAL_STATE, action) => {
         case cartTypes.ADD_TO_CART:
             return{
                 ...state,
-                cartItems: [
-                    ...state.cartItems,
-                    {
-                        ...action.payload
-                    }
-                ],
+                cartItems: handleAddToCart({
+                    prevCartItems: state.cartItems,
+                    nextCartItem: action.payload
+                }),
                 count: state.count + 1
             }
         // case cartTypes.REDUCE_CART_ITEM:
@@ -46,3 +44,5 @@ const CartReducer = (state = INITIAL_STATE, action) => {
 }
 
 export default CartReducer;
+
+
