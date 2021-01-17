@@ -19,3 +19,30 @@
     margin: 0 auto;
 }
 
+.checkout .main-table{
+    margin: 0 auto;
+}
+table{
+    width: 100%;
+}
+tr, th{
+    padding: .5rem 1rem;
+}
+
+td{
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+.checkout .total-cart, .total-cart tr td{
+    padding: 0 1rem;
+    background-color: lightgreen;
+
+}
+.errorMsg{
+    font-size: 2rem;
+    margin: 0 auto;
+    color: red;
+    border-radius: 4px;
+
+}

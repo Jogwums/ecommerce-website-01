@@ -15,10 +15,14 @@ const Checkout = ({}) => {
     const { cartItems } = useSelector(mapState)
     console.log(cartItems);
 
+    const errorMsg = 'No Items  to Display';
+
     return (
         <div className="checkout">
             <h1>Checkout</h1>
+
             <div className="cart">
+                { cartItems.length > 0 ? (
                 <table border="0" cellPadding="0" cellSpacing="0">
                     <tbody>
                         <tr>
@@ -35,7 +39,7 @@ const Checkout = ({}) => {
                         </table>
                         </tr>
                         <tr>
-                            <table border="0" cellPadding="0" cellSpacing="0">
+                            <table className="main-table" border="0" cellPadding="0" cellSpacing="0">
                                 <tbody>
                                     {cartItems.map((item, pos) => {
                                         return (
@@ -47,7 +51,7 @@ const Checkout = ({}) => {
                                                     {item.description}
                                                 </td>
                                                 <td>
-                                                    {item.count}
+                                                    {item.quantity}
                                                 </td>
                                                 <td>
                                                     {item.price}
@@ -64,7 +68,7 @@ const Checkout = ({}) => {
                             </table>
                         </tr>
                         <tr>
-                            <table align="right" border="0" cellPadding="10" cellSpacing="0" >
+                            <table className="total-cart" align="right" border="0" cellPadding="10" cellSpacing="0" >
                                 <tr align="left">
                                     <td>
                                         <h3>
@@ -95,6 +99,11 @@ const Checkout = ({}) => {
                         </tr>
                     </tbody>
                 </table>
+                ) : (
+                    <p className="errorMsg">
+                        {errorMsg}
+                    </p>
+                )}
             </div>
         </div>
     )
