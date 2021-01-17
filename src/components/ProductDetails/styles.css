@@ -1,0 +1,125 @@
+:root{
+    --primaryColor: #7555a1;
+    --secondaryColor: #F68B1E;
+}
+.products{
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 2rem;   
+}
+.products-wrapper{
+    padding: 0;
+    margin: 0 auto;
+
+}
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+    min-height: 100vh;
+    margin: 0 auto;
+    
+}
+.card-wrapper{
+    background-color: rgba(0,0,0,0.2);
+    padding: 2rem;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+    margin-left: .5rem;
+}
+.card-content{
+    background-color:white;
+    color: purple;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction:column;
+    padding: 1rem 2rem;
+    box-shadow:  3px 2px 3px rgba(0,0,0,0.1);
+    margin-left: 1rem;
+
+    cursor: pointer;
+}
+.products-wrapper:hover .card-content{
+    box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
+}
+.card-content .details, .card-content:hover .details{
+    text-align: center;
+    box-shadow: none;
+
+}
+
+.card-title{
+    text-align: center;
+    padding: 0 1rem;
+}
+.card-image-wrapper{
+    text-align: center;
+    padding: 1rem auto;
+    
+}
+.card-price{
+    margin-top: 1rem;
+    font-size: 2rem;
+
+    border-top: 2px solid rgba(240, 238, 235, 0.5);
+    border-bottom: 2px solid rgba(240, 238, 235, 0.5);
+}
+.btn{
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    border: 2px solid var(--primaryColor);
+    cursor:pointer;
+}
+.btn-primary{
+    background-color: white;
+    color:  var(--primaryColor);
+}
+.btn-primary:hover{
+    border: 2px solid var(--primaryColor) ;
+    background-color: var(--primaryColor);
+    color:  #fff;
+}
+.btn-primary:focus{
+    background-color: lightgrey;
+    border: none;
+    outline: none;
+}
+.card-image{
+    width: 160px;
+    height: 140px;
+    border-radius: 4px;
+    max-width: 100%;
+}
+.btn_group{
+    width: 100%;
+    padding: 0;
+    
+
+}
+
+@media (max-width: 480px){
+    .products-wrapper{
+        margin: 0 auto;
+    }
+    .card{
+        width: 100%;
+    }
+    .card-content{
+        padding: 4rem;
+    }
+    .card-title{
+        margin: 2rem 0 2rem 0;
+    }
+    .small{
+        padding: .45rem .52rem;
+
+    }
+}

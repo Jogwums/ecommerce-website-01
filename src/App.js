@@ -25,7 +25,7 @@ import SiteBackground from './layouts/SiteBackground'
 //pages
 import {Homepage, Registration, Shop,
          Dashboard, Admin, Recovery, Payment, Error, CartPage} from './Pages/index'
-import { Women } from './Pages/Products'
+import { WomensProducts, ProductDetailsPage } from './Pages/Products'
 // use redux store instead of state 
 
 class App extends Component {
@@ -102,17 +102,22 @@ class App extends Component {
             )} />
             <Route path="/product" render={() => (
                 <MainLayout>
-                  <Women />
+                  <WomensProducts />
+                </MainLayout>
+            )} />
+            <Route path="/prdt" render={() => (
+                <MainLayout>
+                  <ProductDetailsPage />
                 </MainLayout>
             )} />
             <Route path="/shop" render={() => (
                 <MainLayout>
-                  <Women />
+                  <WomensProducts />
                 </MainLayout>
             )} />
             <Route path="/women" render={() => (
                 <MainLayout>
-                  <Women />
+                  <WomensProducts />
                 </MainLayout>
             )} />
             <Route path="/cart" render={() => (

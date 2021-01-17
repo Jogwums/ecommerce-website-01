@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchProducts } from '../../../redux/Products/productActions'
+import { fetchProducts, fetchProduct } from '../../../redux/Products/productActions'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../../redux/Cart/cartActions'
 
@@ -15,7 +15,8 @@ import './styles.css'
 
 const Women = (props) => {
     const { productData, fetchProducts, cartDataAll } = props;
-   
+   const { id } = productData;
+   const { productID } = useParams(id);
     
     useEffect(() => {
         fetchProducts()
@@ -24,19 +25,21 @@ const Women = (props) => {
     const dispatch = useDispatch();
 
     
-    const handleMoreDetails = async (cartDataAll) => {
-        if(!cartDataAll) return;
-        await dispatch(
-
-        )
-    }
+    
 
     const handleAddToCart = async (productData) => {
         if(!productData){}
         await dispatch(
-            addProduct({...productData, ...cartDataAll})
+            addProduct({...productData, ...cartDataAll}),
         )
-    }    
+    }   
+    
+    const handleMoreDetails = async (cartDataAll) => {
+        if(!cartDataAll) {};
+        await dispatch(
+            fetchProduct({productID})
+        )
+    }
 
     return (
         productData.loading ? (

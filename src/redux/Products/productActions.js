@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-import {FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE} from './productTypes'
+import {   
+        FETCH_PRODUCTS_REQUEST,
+        FETCH_PRODUCTS_SUCCESS, 
+        FETCH_PRODUCTS_FAILURE,
+        SET_PRODUCT,
+        FETCH_PRODUCT,
+    } from './productTypes'
 
 export const fetchProductsRequest = () => {
     return {
@@ -23,6 +29,7 @@ export const fetchProductsFaliure = (error) => {
     }
 }
 
+
 //function to fetch Products 
 
 export const fetchProducts = () => {
@@ -40,3 +47,15 @@ export const fetchProducts = () => {
         })
     }
 }
+
+//single products 
+
+export const fetchProduct = (productID) => ({
+    type: FETCH_PRODUCT,
+    payload: productID
+})
+
+export const setProduct = product => ({
+    type: SET_PRODUCT,
+    payload: product
+})

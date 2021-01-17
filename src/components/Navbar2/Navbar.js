@@ -9,19 +9,22 @@ import { Nav, NavbarContainer, NavLogo,
 import {IconContext } from 'react-icons/lib'
 import { Button } from '../../globalStyles'
 
+import { selectCartItemsCount } from '../../redux/Cart/cartSelectors'
 //import auth from firebase utils
 import { auth } from './../../firebase/firebaseUtils'
 
-const mapState = ({ user }) => ({
-    currentUser: user.currentUser
+const mapState = (state) => ({
+    currentUser: state.user.currentUser,
+    cartItemCount: state.cartData.count,
+    totalNumCartItems: selectCartItemsCount(state)
 });
 
 
 
 const Navbar = (props) => {
-    const { currentUser, cartItemCount } = props;
+    // const { currentUser, cartItemCount } = props;
 
-    // const { currentUser } = useSelector(mapState);
+    const { currentUser, totalNumCartItems } = useSelector(mapState);
 
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
@@ -102,7 +105,7 @@ const Navbar = (props) => {
                            { currentUser && (<NavLinks to="/cart">
                                 <NavItemBtn> 
                                     <CartItem>
-                                        <CartLogo /> {cartItemCount}
+                                        <CartLogo /> {totalNumCartItems}
                                     </CartItem>
                                 </NavItemBtn>
                                 </NavLinks>)}

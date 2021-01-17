@@ -1,4 +1,5 @@
 import Men from './Men'
-import Women from './Women'
+import WomensProducts from './Women'
+import ProductDetailsPage  from './ProductDetails'
 
-export { Men, Women }
+export { Men, WomensProducts, ProductDetailsPage }
