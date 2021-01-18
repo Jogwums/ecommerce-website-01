@@ -20,6 +20,7 @@ const SignIn = (props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errors, setErrors] = useState([])
 
 
     const resetForm = () => {
@@ -29,6 +30,12 @@ const SignIn = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if( email === '' || password === ''){
+            const err = ['No empty fields allowed'];
+            setErrors(err)
+            return;
+        }
 
         try{
             await auth.signInWithEmailAndPassword(email, password);
@@ -48,7 +55,24 @@ const SignIn = (props) => {
 
         return (
             <AuthWrapper {...configAuthWrapper}>
+
+
                     <div className="form-wrap">
+                    {
+                        errors.length > 0 &&(
+                            <ul className="errormsg">
+                                {
+                                    errors.map((err, index) => {
+                                        return (
+                                            <li key={index}>
+                                                {err}
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        )
+                    }
                         <form onSubmit={handleSubmit} action="">
                             <div className="email-signIn">
                                 

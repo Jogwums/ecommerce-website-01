@@ -45,12 +45,14 @@ export const CardGroup = styled.div`
 export const Button = styled.button`
     border-radius: 4px;
     white-space: nowrap;
-    background: ${({primary}) => (primary ? '#4b59f7' : '#32a852')};
-    background: ${({secondary}) => (secondary ? '#32a852' : '#4b59f7')};
+    background: ${({primary}) => (primary ? '#4b59f7' : '#6c0c9c')};
+    background: ${({secondary}) => (secondary ? '#6c0c9c' : '#6c0c9c')};
     background: ${({pay}) => (pay ? '#000' : '#4b59f7')};
+    background: ${({green}) => (green ? '#32a852' : '#4b59f7')};
     padding: ${({big}) => (big? '12px 64px' : '10px 20px')};
     color: #fff;
     font-size: ${({fontBig}) => (fontBig ? '22px' : '16px')};
+    font-size: ${({fontSmall}) => (fontSmall ? '12px' : '16px')};
     outline: none;
     border: 0;
     cursor: pointer;
@@ -58,9 +60,11 @@ export const Button = styled.button`
 
     &:hover{
         transition: all 0.3s ease-out;
-        background: #fff;
-        background: ${({ primary }) => ( primary ? '#0467fb' : '#4b59f7')};
+        background: ${({ primary }) => ( primary ? '#0467fb' : '#32a852')};
         background: ${({pay}) => (pay ? '#0c6c9c' : '#4b59f7')};
+        background: #fff;
+        color: ${({green}) => (green ? '#32a852' : '#4b59f7')};
+        border: 2px solid;
     }
 
     @media (max-width: 960px) {

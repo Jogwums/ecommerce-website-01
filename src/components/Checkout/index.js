@@ -8,6 +8,8 @@ import { FaTrash } from 'react-icons/fa'
 import './styles.css';
 import { Link } from 'react-router-dom';
 
+import { Button } from '../../globalStyles'
+
 const mapState = createStructuredSelector({
     cartItems: selectCartItems
 })
@@ -82,17 +84,19 @@ const Checkout = () => {
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <button className="btn btn-success">
-                                                        Continue Shopping 
-                                                    </button>
+                                                    <Button fontSmall green >
+                                                       <Link to="/product"> 
+                                                          Continue Shopping 
+                                                       </Link>
+                                                    </Button>
                                                     
                                                 </td>
                                                 <td>
-                                                    <button className="btn btn-danger">
+                                                    <Button secondary fontSmall>
                                                        <Link to="/payment">
                                                          Check Out
                                                        </Link>
-                                                    </button>
+                                                    </Button>
                                                 </td>
                                             </tr>
                                         </tbody>

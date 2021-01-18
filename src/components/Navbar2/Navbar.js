@@ -82,7 +82,7 @@ const Navbar = (props) => {
                                SIGN UP
                            </NavLinks>
                        </NavItem>
-                       <NavItem>
+                       <NavItem button >
                        { currentUser && (
                                 <NavLinks to="/">
                                     <div 

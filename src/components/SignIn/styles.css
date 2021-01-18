@@ -51,3 +51,9 @@
     background-color: rebeccapurple;
     color: white;
 }
+.form-wrap .errormsg{
+    list-style: none;
+    color: red;
+    font-size: larger;
+
+}
