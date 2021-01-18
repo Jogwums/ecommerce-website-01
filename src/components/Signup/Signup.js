@@ -24,7 +24,7 @@ const Signup = props => {
     }
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
 
         if(password !== confirmPassword){
             const err = ['Passwords don\'t match'];
@@ -39,7 +39,7 @@ const Signup = props => {
         }
 
         try{
-            const { user} = await auth.createUserWithEmailAndPassword(email, password);
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
 
             await handleUserProfile(user, { displayName });
 
@@ -109,6 +109,7 @@ const Signup = props => {
                                 
                                 />
                                 <Button 
+                                    // onClick={() => handleFormSubmit()}
                                     type="submit"
                                     className="button">
                                     Register

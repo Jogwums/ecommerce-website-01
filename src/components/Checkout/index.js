@@ -68,7 +68,7 @@ const Checkout = ({}) => {
                             </table>
                         </tr>
                         <tr>
-                            <table className="total-cart" align="right" border="0" cellPadding="10" cellSpacing="0" >
+                            <table className="total-cart" border="0" cellPadding="0" cellSpacing="0" >
                                 <tr align="left">
                                     <td>
                                         <h3>
@@ -77,7 +77,7 @@ const Checkout = ({}) => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <table border="0" cellPadding="10" cellSpacing="0">
+                                    <table border="0" cellPadding="0" cellSpacing="0">
                                         <tbody>
                                             <tr>
                                                 <td>
