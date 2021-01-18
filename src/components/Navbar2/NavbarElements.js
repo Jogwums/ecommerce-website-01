@@ -93,6 +93,7 @@ export const NavItem = styled.li`
 
     @media (max-width: 960px) {
         width: 100%;
+        margin-top: 1rem;
         
         &:hover {
             border: none;
