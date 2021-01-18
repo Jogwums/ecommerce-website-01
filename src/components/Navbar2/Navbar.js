@@ -7,7 +7,7 @@ import { Nav, NavbarContainer, NavLogo,
          NavItemBtn, UserId, CartItem, CartLogo  } from './NavbarElements'
 
 import {IconContext } from 'react-icons/lib'
-import { Button } from '../../globalStyles'
+// import { Button } from '../../globalStyles'
 
 import { selectCartItemsCount } from '../../redux/Cart/cartSelectors'
 //import auth from firebase utils
@@ -126,15 +126,7 @@ const Navbar = (props) => {
     )
 }
 
-const mapStateToProps = ({ user, cartData }) => ({
-    currentUser: user.currentUser,
-    cartItemCount: cartData.count,
 
-});
-
-const mapDispatchToProps = () => {
-
-}
-export default connect(mapStateToProps, null)(Navbar)
+export default (Navbar)
 
 

@@ -10,9 +10,14 @@ import AuthWrapper from '../../components/AuthWrapper/index'
 import FormInput from '../Forms/FormInput';
 import { Button } from '../../globalStyles'
 
+// const mapState = state => ({
+//     userData: state.user
+// })
 
 const SignIn = (props) => {
-    const dispatch = useDispatch
+    // const dispatch = useDispatch();
+    // const { email, password } = useSelector(mapState)
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

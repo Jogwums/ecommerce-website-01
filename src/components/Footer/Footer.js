@@ -1,10 +1,8 @@
 import React from 'react'
-import {FooterContainer, FooterSubscription, 
-        FooterSubHeading, FooterSubText, Form, FormInput, 
+import {FooterContainer, 
          FooterLinksContainer, FooterLinksWrapper, FooterLinksItems,
          FooterLink, FooterLinkTitle, SocialMedia, SocialMediaWrapper,
          SocialLogo,SocialIcon, SocialIcons, SocialIconLink, WebsiteRights  } from './FooterElements'
-        import {Button} from '../../globalStyles'
 import {FaFacebook, FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa'
 
 const Footer = () => {
