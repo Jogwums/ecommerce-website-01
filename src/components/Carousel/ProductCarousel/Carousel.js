@@ -5,7 +5,7 @@ import CarouselDetails from '../CarouselDetails'
 //images
 import item1 from '../../../Assets/images/Dir3.jpg'
 import item2 from '../../../Assets/images/siteBg2.jpg'
-import item3 from '../../../Assets/images/siteBg3.jpg'
+import item3 from '../../../Assets/images/Dir1.jpg'
 import item4 from '../../../Assets/images/suitcases.jpg'
 
 import '../styles.css'
@@ -22,7 +22,7 @@ const Carousel = () => {
                     <CarouselDetails shop={item2} name="Buy Clothes" link='shop' />
                 </div>
                 <div className="carousel-item">
-                    <CarouselDetails shop={item3} name="Buy Electronics" link='shop' />
+                    <CarouselDetails shop={item3} name="Buy Mens" link='shop' />
                 </div>
                 <div className="carousel-item">
                     <CarouselDetails shop={item4} name="Buy Travel Gear" link='shop' />
