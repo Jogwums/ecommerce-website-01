@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect'
 import { FaTrash } from 'react-icons/fa'
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const mapState = createStructuredSelector({
     cartItems: selectCartItems
@@ -88,7 +89,9 @@ const Checkout = () => {
                                                 </td>
                                                 <td>
                                                     <button className="btn btn-danger">
-                                                        Check Out
+                                                       <Link to="/payment">
+                                                         Check Out
+                                                       </Link>
                                                     </button>
                                                 </td>
                                             </tr>
