@@ -83,6 +83,7 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
     display: flex;
+    display: ${({hideLG}) => (hideLG ? 'none' : 'flex')};
     height: 3rem;
     border-bottom: 2px solid transparent;
     padding: 0; margin: 0;
@@ -92,6 +93,8 @@ export const NavItem = styled.li`
     }
 
     @media (max-width: 960px) {
+        display: flex;
+        display: ${({hideLG}) => (hideLG ? 'flex' : '')};
         width: 100%;
         margin-top: 1rem;
         

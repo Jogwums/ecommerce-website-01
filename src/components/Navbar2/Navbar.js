@@ -63,9 +63,21 @@ const Navbar = (props) => {
                        <NavIcon />
                        Store
                    </NavLogo>
-                   <MobileIcon onClick={handleClick}>
-                       { click ? <FaTimes /> : <FaBars />}
-                   </MobileIcon>
+                   <div>
+                    <NavItem hideLG>
+                            { currentUser && (<NavLinks to="/cart">
+                                    <NavItemBtn> 
+                                        <CartItem>
+                                            <CartLogo /> {totalNumCartItems}
+                                        </CartItem>
+                                    </NavItemBtn>
+                                    </NavLinks>)}
+                                
+                        </NavItem>
+                    <MobileIcon onClick={handleClick}>
+                        { click ? <FaTimes /> : <FaBars />}
+                    </MobileIcon>
+                   </div>
                    <NavMenu onClick={handleClick} click={click}>
                        <NavItem>
                            <NavLinks to="/">
@@ -101,7 +113,6 @@ const Navbar = (props) => {
                                 )}
                        </NavItem>
                        <NavItem>
-                           
                            { currentUser && (<NavLinks to="/cart">
                                 <NavItemBtn> 
                                     <CartItem>
