@@ -11,7 +11,7 @@ const mapState = createStructuredSelector({
     cartItems: selectCartItems
 })
 
-const Checkout = ({}) => {
+const Checkout = () => {
     const { cartItems } = useSelector(mapState)
     console.log(cartItems);
 
