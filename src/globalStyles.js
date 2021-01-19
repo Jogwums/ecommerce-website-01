@@ -57,6 +57,7 @@ export const Button = styled.button`
     border: 0;
     cursor: pointer;
     width: ${({full}) => (full ? '100%' : '')};
+    font-weight: bolder;
 
     &:hover{
         transition: all 0.3s ease-out;
