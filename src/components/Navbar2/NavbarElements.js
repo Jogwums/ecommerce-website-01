@@ -50,7 +50,7 @@ export const MobileIcon = styled.div`
     @media (max-width: 960px){
         display: block;
         position: absolute;
-        top: 10px; right: 10px;
+        top: 10px; right: 15px;
         transform: translate(-100% 60%);
         font-size: 1.8rem;
         cursor: pointer;
@@ -96,7 +96,7 @@ export const NavItem = styled.li`
         display: flex;
         display: ${({hideLG}) => (hideLG ? 'flex' : '')};
         width: 100%;
-        margin-top: 1rem;
+        margin: 1rem 0;
         
         &:hover {
             border: none;
