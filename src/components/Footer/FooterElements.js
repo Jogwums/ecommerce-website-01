@@ -110,7 +110,7 @@ export const FooterLinksItems = styled.div`
         margin: 0;
         padding: 10px;
         width: 100%;
-
+        font-size: 1.5rem;
     }
 `;
 

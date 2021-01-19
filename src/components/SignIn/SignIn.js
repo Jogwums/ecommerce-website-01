@@ -100,8 +100,8 @@ const SignIn = (props) => {
                                 </Button>
                             </div>
                                 {/* sign-in with google */}
-                            <div className="social-signIn">
-                                <Button onClick={signInWithGoogle}>
+                            <div className="social signIn">
+                                <Button pay onClick={signInWithGoogle}>
                                     Sign In with Google
                                 </Button>
                             </div>
