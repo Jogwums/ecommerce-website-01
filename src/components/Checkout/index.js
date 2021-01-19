@@ -1,24 +1,27 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectCartItems } from '../../redux/Cart/cartSelectors'
 import { createStructuredSelector } from 'reselect'
 
-import { FaTrash } from 'react-icons/fa'
 
 import './styles.css';
 import { Link } from 'react-router-dom';
 
 import { Button } from '../../globalStyles'
 
+import Item from './Item'
+
 const mapState = createStructuredSelector({
     cartItems: selectCartItems
 })
 
+
 const Checkout = () => {
     const { cartItems } = useSelector(mapState)
-    console.log(cartItems);
+    const dispatch = useDispatch();
 
     const errorMsg = 'No Items  to Display';
+
 
     return (
         <div className="checkout">
@@ -46,27 +49,10 @@ const Checkout = () => {
                                 <tbody>
                                     {cartItems.map((item, pos) => {
                                         return (
-                                            <tr key={pos}>
-                                                <td>
-                                                    {item.name}
-                                                </td>
-                                                <td>
-                                                    {item.description}
-                                                </td>
-                                                <td>
-                                                    {item.quantity}
-                                                </td>
-                                                <td>
-                                                    {item.price}
-                                                </td>
-                                                <td>
-                                                   <button className="btn btn-danger" onClick="">
-                                                      <FaTrash />
-                                                   </button>
-                                                </td>
-                                            </tr>
+                                            <Item item={item} pos={pos} />
                                         )
-                                    })}
+                                      })
+                                    }
                                 </tbody>
                             </table>
                         </tr>

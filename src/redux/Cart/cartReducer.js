@@ -1,5 +1,5 @@
 import { cartTypes } from './cartTypes'
-import { handleAddToCart } from './cartUtils'
+import { handleAddToCart, handleRemoveCartItem } from './cartUtils'
 
 const INITIAL_STATE = {
     loading: false,
@@ -30,7 +30,10 @@ const CartReducer = (state = INITIAL_STATE, action) => {
         case cartTypes.REMOVE_CART_ITEM:
             return{
                 ...state,
-                cartItems: state.cartItems.filter((cartItem) => cartItem.id !== action.payload),
+                cartItems: handleRemoveCartItem({
+                    prevCartItems: state.cartItems,
+                    cartItemToRemove: action.payload
+                }),
                 count: state.count - 1
             }
         case cartTypes.CLEAR_CART_ITEMS:

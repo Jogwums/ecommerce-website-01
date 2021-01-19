@@ -32,3 +32,10 @@ export const handleAddToCart = ({ prevCartItems, nextCartItem}) => {
         }
     ]
 }
+
+export const handleRemoveCartItem = ({
+    prevCartItems,
+    cartItemToRemove
+}) => {
+    return prevCartItems.filter((cartItem) => (cartItem.id !== cartItemToRemove.id))
+}

@@ -10,10 +10,10 @@ export const removeCartItem = (cartItem) => ({
     payload: cartItem,
 });
 
-export const reduceCartItem = (cardItem) => ({
-    type: cartTypes.REDUCE_CART_ITEM,
-    payload: cardItem,
-})
+// export const reduceCartItem = (cardItem) => ({
+//     type: cartTypes.REDUCE_CART_ITEM,
+//     payload: cardItem,
+// })
 
 export const clearCart = () => ({
     type: cartTypes.CLEAR_CART_ITEM,
