@@ -43,7 +43,7 @@ const Women = (props) => {
 
     return (
         productData.loading ? (
-            <h2 className="text-center">Loading
+            <h2 className="text-center">
                 <img src={loader} alt="loader" width="50" height="50" />
             </h2>
             

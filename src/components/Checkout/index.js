@@ -71,7 +71,7 @@ const Checkout = () => {
                                         <tbody>
                                             <tr>
                                                 <td className="cart-btn">
-                                                    <Button fontSmall green >
+                                                    <Button fontSmall green full>
                                                        <Link to="/product"> 
                                                           Continue Shopping 
                                                        </Link>
@@ -79,7 +79,7 @@ const Checkout = () => {
                                                     
                                                 </td>
                                                 <td className="cart-btn">
-                                                    <Button secondary fontSmall>
+                                                    <Button secondary fontSmall full>
                                                        <Link to="/payment">
                                                          Check Out
                                                        </Link>
