@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCartItems } from '../../redux/Cart/cartSelectors'
+import { selectCartItems, selectCartTotal } from '../../redux/Cart/cartSelectors'
 import { createStructuredSelector } from 'reselect'
 
 
@@ -12,12 +12,13 @@ import { Button } from '../../globalStyles'
 import Item from './Item'
 
 const mapState = createStructuredSelector({
-    cartItems: selectCartItems
+    cartItems: selectCartItems,
+    total: selectCartTotal
 })
 
 
 const Checkout = () => {
-    const { cartItems } = useSelector(mapState)
+    const { cartItems, total } = useSelector(mapState)
     const dispatch = useDispatch();
 
     const errorMsg = 'No Items  to Display';
@@ -61,7 +62,7 @@ const Checkout = () => {
                                 <tr align="left">
                                     <td>
                                         <h3>
-                                            Total: 
+                                            Total: {total}
                                         </h3>
                                     </td>
                                 </tr>

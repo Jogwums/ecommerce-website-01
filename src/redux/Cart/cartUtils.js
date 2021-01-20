@@ -39,3 +39,18 @@ export const handleRemoveCartItem = ({
 }) => {
     return prevCartItems.filter((cartItem) => (cartItem.id !== cartItemToRemove.id))
 }
+
+export const handleReduceCartItem = ({
+    prevCartItems,
+    cartItemToReduce
+}) => {
+    const existingCartItem = prevCartItems.find(cartItem => cartItem.id === cartItemToReduce.id);
+
+    if(existingCartItem.quantity === 1){
+        return prevCartItems.filter(cartItem => cartItem.id !== existingCartItem.id)
+    }
+    return prevCartItems.map(cartItem => cartItem.id === existingCartItem.id ? {
+        ...cartItem,
+        quantity: cartItem.quantity - 1
+    } : cartItem)
+}
