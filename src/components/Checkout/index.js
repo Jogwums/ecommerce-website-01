@@ -7,7 +7,7 @@ import { createStructuredSelector } from 'reselect'
 import './styles.css';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../globalStyles'
+import { Button, BtnLink } from '../../globalStyles'
 
 import Item from './Item'
 
@@ -67,22 +67,22 @@ const Checkout = () => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <table border="0" cellPadding="0" cellSpacing="0">
+                                    <table className="btn_group" border="0" cellPadding="0" cellSpacing="0">
                                         <tbody>
                                             <tr>
                                                 <td className="cart-btn">
-                                                    <Button fontSmall green full>
-                                                       <Link to="/product"> 
+                                                    <Button pay fontSmall full>
+                                                       <BtnLink to="/product"> 
                                                           Continue Shopping 
-                                                       </Link>
+                                                       </BtnLink>
                                                     </Button>
                                                     
                                                 </td>
                                                 <td className="cart-btn">
-                                                    <Button secondary fontSmall full>
-                                                       <Link to="/payment">
+                                                    <Button pay fontSmall full>
+                                                       <BtnLink to="/payment">
                                                          Check Out
-                                                       </Link>
+                                                       </BtnLink>
                                                     </Button>
                                                 </td>
                                             </tr>

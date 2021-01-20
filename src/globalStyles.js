@@ -1,5 +1,6 @@
 // main css file 
 import styled, { createGlobalStyle } from 'styled-components'
+import { Link } from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -42,13 +43,19 @@ export const CardGroup = styled.div`
 
 `;
 
+export const BtnLink = styled(Link)`
+    color: white ;
+    width: ${({full}) => (full ? '100%' : '')} !important;
+`;
+
+
 export const Button = styled.button`
     border-radius: 4px;
     white-space: nowrap;
-    background: ${({primary}) => (primary ? '#4b59f7' : '#6c0c9c')};
-    background: ${({secondary}) => (secondary ? '#6c0c9c' : '#6c0c9c')};
-    background: ${({pay}) => (pay ? '#000' : '#4b59f7')};
-    background: ${({green}) => (green ? '#32a852' : '#4b59f7')};
+    background-color: ${({primary}) => (primary ? '#4b59f7' : '#6c0c9c')};
+    background-color: ${({secondary}) => (secondary ? '#6c0c9c' : '#6c0c9c')};
+    background-color: ${({pay}) => (pay ? '#000' : '#4b59f7')};
+    background-color: ${({green}) => (green ? '#32a852' : '#4b59f7')};
     padding: ${({big}) => (big? '12px 64px' : '10px 20px')};
     color: #fff;
     font-size: ${({fontBig}) => (fontBig ? '22px' : '16px')};
@@ -61,9 +68,9 @@ export const Button = styled.button`
 
     &:hover{
         transition: all 0.3s ease-out;
-        background: ${({ primary }) => ( primary ? '#0467fb' : '#32a852')};
-        background: ${({pay}) => (pay ? '#0c6c9c' : '#4b59f7')};
-        background: #fff;
+        background-color: ${({ primary }) => ( primary ? '#0467fb' : '#32a852')};
+        background-color: ${({pay}) => (pay ? '#0c6c9c' : '#4b59f7')};
+        background-color: #fff;
         color: ${({green}) => (green ? '#32a852' : '#4b59f7')};
         border: 2px solid;
     }

@@ -19,6 +19,7 @@
     grid-gap: 1rem;
 
     margin-bottom: 5rem;
+    position: relative;
 }
 
 .paymentDetails .group{
@@ -31,7 +32,7 @@
 
 .paymentDetails .center{
     position: absolute;
-    bottom: 20px;
+    bottom: -55px;
     left: 34.5%;
 
     padding: 1rem;
