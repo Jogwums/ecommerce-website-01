@@ -52,7 +52,7 @@ const Item = ({item, pos}) => {
                 </td>
                 <td>
                     <span onClick={() => handleReduceProduct(item)}> {`<`}</span>
-                    {quantity}
+                    <span>{quantity}</span>
                     <span onClick={() => handleAddProduct(item)}> {`>`}</span>
                 </td>
                 <td>
