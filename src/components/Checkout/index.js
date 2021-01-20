@@ -62,7 +62,7 @@ const Checkout = () => {
                                 <tr align="left">
                                     <td>
                                         <h3>
-                                            Total: {total}
+                                            Total: {`\u20A6`}{total}
                                         </h3>
                                     </td>
                                 </tr>

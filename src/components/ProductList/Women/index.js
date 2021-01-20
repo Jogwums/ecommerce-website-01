@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchProducts, fetchProduct } from '../../../redux/Products/productActions'
 import { useDispatch } from 'react-redux'
@@ -23,7 +23,7 @@ const Women = (props) => {
     }, [fetchProducts])
 
     const dispatch = useDispatch();
-
+    const history = useHistory();
     
     
 
@@ -31,6 +31,7 @@ const Women = (props) => {
         if(!productData){}
         await dispatch(
             addProduct({...productData, ...cartDataAll}),
+            history.push('/cart')
         )
     }   
     

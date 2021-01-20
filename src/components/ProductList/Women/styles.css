@@ -42,7 +42,6 @@
     border: 1px double purple;
     border-radius: 4px;
 
-    margin-left: 1rem;
     cursor: pointer;
 }
 .products-wrapper:hover .card-content{
@@ -55,7 +54,11 @@
 }
 .card-title{
     text-align: left;
-    padding: 0;
+    font-weight: 600;
+    font-size: 2rem;
+
+    margin: 1rem;
+    color: #1a3263;
 }
 .card-image-wrapper{
     width: 100%;
@@ -73,10 +76,21 @@
 .card-price{
     margin-top: 1rem;
     font-size: 2rem;
+    color: purple;
 
+    font-weight: 600;
+
+    padding: 0; margin: 0 0 1rem 1rem;
     border-top: 2px solid rgba(240, 238, 235, 0.5);
     border-bottom: 2px solid rgba(240, 238, 235, 0.5);
 }
+.card-footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0; margin-top: 1rem;
+}
+
 .btn{
     margin: 1rem;
     font-size: 1.5rem;
@@ -101,9 +115,12 @@
     outline: none;
 }
 .btn_group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 0;
-    
+    margin: 0 auto;
+    padding: 0;   
 
 }
 
@@ -115,10 +132,10 @@
         width: 100%;
     }
     .card-content{
-        padding: 4rem;
+        padding: 1rem;
     }
     .card-title{
-        margin: 2rem 0 2rem 0;
+        margin: 1rem 0 0 1rem;
     }
     .small{
         padding: .45rem .52rem;
