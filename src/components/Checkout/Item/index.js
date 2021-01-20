@@ -51,9 +51,9 @@ const Item = ({item, pos}) => {
                     {description}
                 </td>
                 <td>
-                    <span onClick={() => handleReduceProduct(item)}> {`<`}</span>
+                    <span className="btn arrow" onClick={() => handleReduceProduct(item)}> {`<`}</span>
                     <span>{quantity}</span>
-                    <span onClick={() => handleAddProduct(item)}> {`>`}</span>
+                    <span className="btn arrow" onClick={() => handleAddProduct(item)}> {`>`}</span>
                 </td>
                 <td>
                     {price}

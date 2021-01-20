@@ -51,6 +51,9 @@ img{
     border-radius: 4px;
 
 }
+.arrow{
+    cursor: pointer;
+}
 @media (max-width: 420px){
    .checkout{
        width: 100%;

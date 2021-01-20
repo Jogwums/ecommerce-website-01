@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect'
 
 
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { Button, BtnLink } from '../../globalStyles'
 
@@ -20,6 +20,7 @@ const mapState = createStructuredSelector({
 const Checkout = () => {
     const { cartItems, total } = useSelector(mapState)
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const errorMsg = 'No Items  to Display';
 
@@ -72,7 +73,7 @@ const Checkout = () => {
                                             <tr>
                                                 <td className="cart-btn">
                                                     <Button pay fontSmall full>
-                                                       <BtnLink to="/product"> 
+                                                       <BtnLink onClick={() => history.goBack()}> 
                                                           Continue Shopping 
                                                        </BtnLink>
                                                     </Button>
