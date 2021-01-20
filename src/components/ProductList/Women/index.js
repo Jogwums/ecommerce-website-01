@@ -59,11 +59,11 @@ const Women = (props) => {
                                    <div className="products-wrapper">
                                      <div className="card-content">
                                         
-                                        <span className="card-image-wrapper">
+                                        <div className="card-image-wrapper">
                                             <img className="card-image" src={product.images} alt={product.id} />
-                                        </span>
+                                        </div>
                                         
-                                        <div className=" details">
+                                        <div className="details">
                                             <h2 className="card-title" key={product.id}>{product.name}</h2>
                                             <p className="card-price">{`\u20A6`}{product.price}</p>
                                         </div>
@@ -76,7 +76,9 @@ const Women = (props) => {
                                                 More Details
                                             </button>
                                         </span>
-                                        
+                                        <span className="card-footer">
+                                            <small>Free shipping on all locally made items</small>
+                                        </span>
                                     </div>
                                    </div>
                                 </>)

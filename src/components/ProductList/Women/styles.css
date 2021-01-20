@@ -29,7 +29,6 @@
     z-index: 1000;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 12px;
     margin-left: .5rem;
 }
 .card-content{
@@ -38,29 +37,38 @@
     margin: 1rem auto;
     display: flex;
     flex-direction:column;
-    padding: 1rem 2rem;
-    box-shadow:  3px 2px 3px rgba(0,0,0,0.1);
-    margin-left: 1rem;
+    padding: 1rem;
 
+    border: 1px double purple;
+    border-radius: 4px;
+
+    margin-left: 1rem;
     cursor: pointer;
 }
 .products-wrapper:hover .card-content{
     box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
 }
 .card-content .details, .card-content:hover .details{
-    text-align: center;
+    text-align: left;
     box-shadow: none;
 
 }
-
 .card-title{
-    text-align: center;
-    padding: 0 1rem;
+    text-align: left;
+    padding: 0;
 }
 .card-image-wrapper{
-    text-align: center;
+    width: 100%;
     padding: 1rem auto;
-    
+    display: flex;
+    justify-content: center;
+
+}
+.card-image-wrapper .card-image{
+    width: 240px;
+    height: auto;
+
+    max-width: 100%;
 }
 .card-price{
     margin-top: 1rem;
@@ -91,12 +99,6 @@
     background-color: lightgrey;
     border: none;
     outline: none;
-}
-.card-image{
-    width: 160px;
-    height: 140px;
-    border-radius: 4px;
-    max-width: 100%;
 }
 .btn_group{
     width: 100%;
