@@ -47,10 +47,10 @@ const Item = ({item, pos}) => {
                 <td>
                     <img src={images} alt={name}/>
                 </td>
-                <td>
+                <td className="del-desc">
                     {description}
                 </td>
-                <td>
+                <td className="quantity-group">
                     <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
                         <FaArrowAltCircleDown />
                     </span>

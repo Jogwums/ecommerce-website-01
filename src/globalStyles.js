@@ -45,7 +45,7 @@ export const CardGroup = styled.div`
 
 export const BtnLink = styled(Link)`
     color: white ;
-    width: ${({full}) => (full ? '100%' : '')} !important;
+    width: ${({full}) => (full ? '100%' : '100%')} !important;
 `;
 
 

@@ -68,10 +68,16 @@ img{
     padding: .25rem;
 
 }
-
+.total-cart .btn_group, .total-cart .btn_group .cart-btn{
+    width: 100%;
+}
+.total-cart .btn_group .cart-btn{
+    padding: 0 3rem;
+}
 @media (max-width: 420px){
    .checkout{
        width: 100%;
+       min-height: max-content;
        padding: 2rem 0;
        margin: 1rem auto;
    }
@@ -88,8 +94,18 @@ img{
         margin: 1rem auto;
         padding: 1rem;
     }
+    .quantity-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: 1rem;
+    }
     .checkout .total-cart{
         font-size: smaller;
+        margin-right: -2rem;
     }
-    
+    .del-descr, .del-trash{
+        display: none;
+    }
 }

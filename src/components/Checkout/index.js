@@ -38,10 +38,10 @@ const Checkout = () => {
                             <tbody>
                                 <tr>
                                     <th>Product</th>
-                                    <th>Description</th>
+                                    <th className="del-desc">Description</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
-                                    <th id="del">Remove</th>
+                                    <th className="del-trash">Remove</th>
                                 </tr>
                             </tbody>
                         </table>
