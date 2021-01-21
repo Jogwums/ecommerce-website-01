@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from './../globalStyles'
+import { Button, BtnLink} from './../globalStyles'
 
 
 const Error = () => {
@@ -10,7 +9,7 @@ const Error = () => {
             <h1 className="error-msg">Page Not Found</h1>
 
             <Button primary fontBig >
-                <Link to="/">Go Back</Link>
+                <BtnLink to="/">Go Back</BtnLink>
             </Button>
         </div>
     )
