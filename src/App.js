@@ -120,11 +120,12 @@ class App extends Component {
                   <WomensProducts />
                 </MainLayout>
             )} />
-            <Route path="/cart" render={() => (
+            <Route path="/cart" render={() => currentUser ? (
                 <MainLayout>
                   <CartPage />
                 </MainLayout>
-            )} />
+            ) : (<Redirect to="/login"  />)} />
+
             <Route path="/recovery" render={() => (
               <MainLayout>
                 <Recovery />
