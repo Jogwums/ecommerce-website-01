@@ -73,7 +73,7 @@ const Checkout = () => {
                                             <tr>
                                                 <td className="cart-btn">
                                                     <Button pay fontSmall full>
-                                                       <BtnLink onClick={() => history.goBack()}> 
+                                                       <BtnLink onClick={() => history.push('/products')}> 
                                                           Continue Shopping 
                                                        </BtnLink>
                                                     </Button>
