@@ -23,7 +23,9 @@ const ErrorPage = {
     alignItems: "center",
     justifyContent: "center",
 
-    background: "grey",
+    padding: '5rem',
+
+    background: "lightgrey",
     margin: "0 auto",
 
     height: "100vh",
