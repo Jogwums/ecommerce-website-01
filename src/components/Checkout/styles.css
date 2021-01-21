@@ -53,7 +53,22 @@ img{
 }
 .arrow{
     cursor: pointer;
+    padding: 0;
+    border: none;
+    color: purple;
 }
+.arrow:hover, .delete:hover{
+    transform: scale(1.05);
+    transition: transform .5s ease;
+}
+
+.delete, .delete:hover{
+    border: none;
+    color: red;
+    padding: .25rem;
+
+}
+
 @media (max-width: 420px){
    .checkout{
        width: 100%;

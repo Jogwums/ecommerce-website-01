@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { removeCartItem, addProduct, reduceCartItem } from '../../../redux/Cart/cartActions'
 
-import { FaTrash } from 'react-icons/fa'
+import { FaTrash, FaArrowAltCircleDown, FaArrowAltCircleUp } from 'react-icons/fa'
 
 import './../styles.css'
 
@@ -51,15 +51,19 @@ const Item = ({item, pos}) => {
                     {description}
                 </td>
                 <td>
-                    <span className="btn arrow" onClick={() => handleReduceProduct(item)}> {`<`}</span>
+                    <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
+                        <FaArrowAltCircleDown />
+                    </span>
                     <span>{quantity}</span>
-                    <span className="btn arrow" onClick={() => handleAddProduct(item)}> {`>`}</span>
+                    <span className="btn arrow" onClick={() => handleAddProduct(item)}> 
+                        <FaArrowAltCircleUp />
+                    </span>
                 </td>
                 <td>
                     {price}
                 </td>
                 <td>
-                    <button className="btn btn-danger" onClick={() => handleRemoveCartItem(id) }>
+                    <button className="btn delete" onClick={() => handleRemoveCartItem(id) }>
                         <FaTrash />
                     </button>
                 </td>
