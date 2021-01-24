@@ -32,7 +32,7 @@ const ProductDetails = ({}) => {
         dispatch(
             fetchProduct(productID)
         )
-    }, [])
+    }, [productID])
 
     return (
         <div className="product-page">
