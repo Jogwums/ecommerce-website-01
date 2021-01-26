@@ -1,21 +1,26 @@
 import React, {useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
 
 import {fetchProduct, setProduct } from '../../redux/Products/productActions' 
 import { addProduct } from '../../redux/Cart/cartActions'
 
+import './styles.css'
+
+//import handle add to cart
+import { useRef } from 'react-redux'
 
 const mapState = (state) => ({
-    productSingle: state.product
+    productSingle: state.products.product
 
 })
 
 const ProductDetails = (props) => {
     const { productSingle } = useSelector(mapState);
     // const dispatch = useDispatch();
+    const history = useHistory();
 
-    console.log(productSingle)
+    console.log(['ProductDets:',productSingle])
     
     
 
@@ -26,7 +31,7 @@ const ProductDetails = (props) => {
         desc,
         description,
         price,
-    } = props; 
+    } = productSingle; 
 
 
 
@@ -35,17 +40,18 @@ const ProductDetails = (props) => {
             <div className="image-wrapper">
                 <img src={images} alt="images"/>
             </div>
-            <div className="card-content details">
+            <div className="product-page__details">
                 <ul>
                     <li>
-                        <h1>{`name`}</h1>
+                        <h1>{name}</h1>
                     </li>
                     <li>
                         <span>{price}</span>
                     </li>
                     <li>
                         <div>
-                            <button className="btn btn-primary">
+                            <button className="btn btn-primary"
+                                onClick={() => history.push('/cart')}  >
                                 Add to Cart 
                             </button>
                         </div>

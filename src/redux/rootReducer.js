@@ -16,7 +16,7 @@ export const rootReducer = combineReducers({
 const configStorage = {
     key: 'root',
     storage,
-    whitelist: ['cartData']
+    whitelist: ['cartData', 'product']
 };
 //products is currently being persisted via the routes
 // user is being persisted via firebase auth 
