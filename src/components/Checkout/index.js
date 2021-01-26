@@ -60,7 +60,7 @@ const Checkout = () => {
                         </tr>
                         <tr>
                             <table className="total-cart" border="0" cellPadding="0" cellSpacing="0" >
-                                <tr align="right">
+                                <tr >
                                     <td>
                                         <h3>
                                             Total: {`\u20A6`}{total}
