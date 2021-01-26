@@ -11,7 +11,7 @@ const mapState = (state) => ({
 
 })
 
-const ProductDetails = ({}) => {
+const ProductDetails = ({  }) => {
     const { product } = useSelector(mapState);
     const dispatch = useDispatch();
     const { productID } = useParams();
@@ -20,7 +20,7 @@ const ProductDetails = ({}) => {
     console.log(product)
 
     const {
-        productID: id,
+        id,
         name,
         images,
         desc,
@@ -42,7 +42,7 @@ const ProductDetails = ({}) => {
             <div className="card-content details">
                 <ul>
                     <li>
-                        <h1>{name}</h1>
+                        <h1>{`name`}</h1>
                     </li>
                     <li>
                         <span>{price}</span>

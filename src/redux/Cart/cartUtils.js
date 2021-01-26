@@ -7,7 +7,6 @@ export const existingCartItem = ({
     );
 };
 
-
 export const handleAddToCart = ({ prevCartItems, nextCartItem}) => {
 
     const quantityIncrement = 1;
@@ -37,9 +36,9 @@ export const handleRemoveCartItem = ({
     prevCartItems,
     cartItemToRemove
 }) => {
-    return prevCartItems.filter((cartItem) => (cartItem.id !== cartItemToRemove.id))
+    return prevCartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
 }
-
+ 
 export const handleReduceCartItem = ({
     prevCartItems,
     cartItemToReduce

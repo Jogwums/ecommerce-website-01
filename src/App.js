@@ -105,7 +105,7 @@ class App extends Component {
                   <WomensProducts />
                 </MainLayout>
             )} />
-            <Route path="/prdt" render={() => (
+            <Route path="/product/:productID" render={() => (
                 <MainLayout>
                   <ProductDetailsPage />
                 </MainLayout>

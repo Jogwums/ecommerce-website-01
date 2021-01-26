@@ -45,12 +45,12 @@ const Women = (props) => {
 
     return (
         productData.loading ? (
-            <h2 className="text-center">
+            <h2 className="text-center flex items-center py-0 px-0 ">
                 <img src={loader} alt="loader" width="50" height="50" />
             </h2>
             
         ) : productData.error ? (
-            <h2>{productData.error}</h2>
+            <h2 className="text-center">{productData.error}</h2>
         ) : (
             <div>
                 <div className="card">
@@ -68,6 +68,7 @@ const Women = (props) => {
                                         <div className="details">
                                             <h2 className="card-title" key={product.id}>{product.name}</h2>
                                             <p className="card-price">{`\u20A6`}{product.price}</p>
+                                            <h4>Product ID: {id}</h4>
                                         </div>
                                         
                                         <span className="btn_group">
