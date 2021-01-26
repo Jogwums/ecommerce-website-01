@@ -11,6 +11,7 @@ import { handleSingleProduct } from './../Products/productUtils'
 const initialState = {
     loading: false,
     products: [],
+    product: [],
     error: '',
 }
 
@@ -37,15 +38,16 @@ const productsReducer = (state = initialState, action) => {
             return{
                 ...state,
                 loading: true,
-                products: action.payload,
+                product: action.payload,
 
             }
         case SET_PRODUCT:
             return{
                 ...state,
                 loading: false,
+                
                 product: handleSingleProduct({
-                    prevProduct: state.products,
+                    prevProduct: state.product,
                     currentProduct: action.payload 
                 })
                 

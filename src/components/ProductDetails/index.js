@@ -1,23 +1,23 @@
 import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 
-import {fetchProduct } from '../../redux/Products/productActions' 
+import {fetchProduct, setProduct } from '../../redux/Products/productActions' 
 import { addProduct } from '../../redux/Cart/cartActions'
 
 
 const mapState = (state) => ({
-    product: state.products
+    productSingle: state.product
 
 })
 
-const ProductDetails = ({  }) => {
-    const { product } = useSelector(mapState);
-    const dispatch = useDispatch();
-    const { productID } = useParams();
+const ProductDetails = (props) => {
+    const { productSingle } = useSelector(mapState);
+    // const dispatch = useDispatch();
+
+    console.log(productSingle)
     
     
-    console.log(product)
 
     const {
         id,
@@ -26,13 +26,9 @@ const ProductDetails = ({  }) => {
         desc,
         description,
         price,
-    } = product; 
+    } = props; 
 
-    useEffect(() => {
-        dispatch(
-            fetchProduct(productID)
-        )
-    }, [productID])
+
 
     return (
         <div className="product-page">
@@ -66,4 +62,10 @@ const ProductDetails = ({  }) => {
     )
 }
 
-export default ProductDetails
+const mapDispatchToProps = dispatch => {
+    return {
+        setProduct: () => dispatch(setProduct())
+    }
+}
+
+export default connect(mapState, mapDispatchToProps)(ProductDetails)

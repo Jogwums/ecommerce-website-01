@@ -1,6 +1,9 @@
 export const handleSingleProduct = ({
-    prevProduct,
+    allProductArray,
     currentProduct
 }) => {
-    return prevProduct.map(item => item.id === currentProduct.id)
+    if(allProductArray > 0 ) {
+        return allProductArray.map(item => item.id === currentProduct.id)
+    }
+    
 }

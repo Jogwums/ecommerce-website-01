@@ -18,7 +18,6 @@ export const fetchProductsSuccess = (products) => {
     return {
         type: FETCH_PRODUCTS_SUCCESS,
         payload: products,
-
     }
 }
 
@@ -50,12 +49,30 @@ export const fetchProducts = () => {
 
 //single products 
 
-export const fetchProduct = (productID) => ({
-    type: FETCH_PRODUCT,
-    payload: productID
-})
-
 export const setProduct = product => ({
     type: SET_PRODUCT,
     payload: product
 })
+
+export const fetchSingleProduct = product => ({
+    type: FETCH_PRODUCT,
+    payload: product
+})
+
+export const fetchProduct = (id) => {
+    return (dispatch) => {  
+        axios.get(`https://5fcf88c51f2374001663091f.mockapi.io/shop/${id}`)
+        // .then( res => console.log(res.data))
+            .then(res => {
+            const product = res.data
+            dispatch(fetchSingleProduct(product))
+            dispatch(setProduct(...product))
+        })
+        .catch(error => {
+            const errorMsg = error.message
+            // console.log(errorMsg);
+        })
+
+    }
+}
+

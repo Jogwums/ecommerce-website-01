@@ -38,9 +38,10 @@ const Women = (props) => {
     const handleMoreDetails = async (cartDataAll) => {
         if(!cartDataAll) {};
         await dispatch(
-            fetchProduct(cartDataAll),
-            history.push('/product/:${product.id}')
-        )
+            fetchProduct(cartDataAll), 
+        )       
+            history.push(`/productdets`)
+        
     }
 
     return (
