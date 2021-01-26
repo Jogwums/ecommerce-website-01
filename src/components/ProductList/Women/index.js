@@ -69,7 +69,7 @@ const Women = (props) => {
                                         <div className="details">
                                             <h2 className="card-title" key={product.id}>{product.name}</h2>
                                             <p className="card-price">{`\u20A6`}{product.price}</p>
-                                            <h4>Product ID: {product.id}</h4>
+                                            
                                         </div>
                                         
                                         <span className="btn_group">

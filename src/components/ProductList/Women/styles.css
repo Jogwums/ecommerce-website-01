@@ -133,6 +133,7 @@
     }
     .card-content{
         padding: 1rem;
+        width: 255px;
     }
     .card-title{
         margin: 1rem 0 0 1rem;
@@ -140,5 +141,9 @@
     .small{
         padding: .45rem .52rem;
 
+    }
+    .btn_group button{
+        font-size: small;
+        
     }
 }
