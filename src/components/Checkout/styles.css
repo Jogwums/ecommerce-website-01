@@ -105,7 +105,7 @@ img{
         font-size: smaller;
         margin-right: -2rem;
     }
-    .del-descr, .del-trash{
+    .del-desc, .del-trash{
         display: none;
     }
 }

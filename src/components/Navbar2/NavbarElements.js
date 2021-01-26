@@ -50,7 +50,7 @@ export const MobileIcon = styled.div`
     @media (max-width: 960px){
         display: block;
         position: absolute;
-        top: 10px; right: 15px;
+        top: 12px; right: 15px;
         transform: translate(-100% 60%);
         font-size: 1.8rem;
         cursor: pointer;
@@ -78,6 +78,10 @@ export const NavMenu = styled.ul`
         transition: all 0.8s ease;
         background: rebeccapurple;
         
+    }
+    @media ( max-width: 360px){
+        width: 85%;
+        margin: 0 auto;
     }
 `;
 
@@ -162,6 +166,10 @@ export const UserId = styled.h3`
         background-color: rebeccapurple;
         color: white;
         border: none;
+    }
+    @media (max-width: 360px){
+        display: none;
+
     }
 `;
 

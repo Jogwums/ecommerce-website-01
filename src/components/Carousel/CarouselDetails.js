@@ -15,15 +15,6 @@ const Details = ({shop, name, link}) => {
                 }}>
                     <Link to={`/${link}`} className="btn btn-primary">{name}</Link>
                 </div>
-            {/* <div
-            className="item"
-            style={{
-                backgroundImage: `url(${shopWomen})`
-            }}>
-            
-                <Link to="/" className="btn btn-primary">Shop Women</Link>
-            
-            </div> */}
             </div>
         </div>
     )
