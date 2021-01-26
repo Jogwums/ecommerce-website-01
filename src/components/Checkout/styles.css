@@ -39,10 +39,15 @@ td{
 
 .errorMsg{
     font-size: 2rem;
+    font-weight: bold;
     margin: 0 auto;
+    padding: .5rem 1rem;
     color: red;
     border-radius: 4px;
 
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
 }
 
 img{
@@ -126,5 +131,10 @@ img{
     }
     .del-descr, .del-trashr{
         display: none;
+    }
+    .errorMsg{
+        display: grid;
+        align-content: center;
+        
     }
 }
