@@ -66,7 +66,7 @@ export const fetchProduct = (id) => {
             .then(res => {
             const product = res.data
             dispatch(fetchSingleProduct(product))
-            dispatch(setProduct(...product))
+            
         })
         .catch(error => {
             const errorMsg = error.message
