@@ -5,7 +5,7 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 import {fetchProduct, setProduct } from '../../redux/Products/productActions' 
 import { addProduct } from '../../redux/Cart/cartActions'
 
-import './styles.css'
+// import './styles.css'
 
 //import handle add to cart
 import { useRef } from 'react-redux'
@@ -65,17 +65,17 @@ const ProductDetails = (props) => {
         //         </ul>
         //     </div>
         // </div>
-        <div class="flex">
-        <div class="flex-none w-48 relative">
-            <img src={images} alt="..." class="absolute inset-0 w-full h-full object-cover" />
+        <div class="flex flex-col sm:flex-row">
+        <div class="flex-auto w-full sm:w-52">
+            <img src={images} alt="..." class=" inset-0 w-full h-full object-cover" />
         </div>
-    <form class="flex-auto p-6">
+        <form class="flex-auto p-6">
         <div class="flex flex-wrap">
         <h1 class="flex-auto text-xl font-semibold">
             {name}
         </h1>
         <div class="text-xl font-semibold text-gray-500">
-            ${price}
+         {`\u20A6`}{price}
         </div>
         <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2">
             In stock
@@ -107,7 +107,7 @@ const ProductDetails = (props) => {
         <div class="ml-auto text-sm text-gray-500 underline">Size Guide</div>
         </div>
         <div class="flex space-x-3 mb-4 text-sm font-medium">
-        <div class="flex-auto flex space-x-3">
+        <div class="flex-1 flex space-x-3">
             <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white" type="submit">Buy now</button>
             <button class="w-1/2 flex items-center justify-center rounded-md border border-gray-300" 
                     type="button"
