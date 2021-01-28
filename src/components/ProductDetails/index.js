@@ -66,10 +66,10 @@ const ProductDetails = (props) => {
         //     </div>
         // </div>
         <div class="flex flex-col sm:flex-row">
-        <div class="flex-auto w-full sm:w-52">
-            <img src={images} alt="..." class=" inset-0 w-full h-full object-cover" />
+        <div class="flex-auto w-2/3 sm:w-52 my-0 mx-auto">
+            <img src={images} alt={desc} class=" inset-0 w-full h-full object-cover" />
         </div>
-        <form class="flex-auto p-6">
+        <form class="flex-auto p-6 w-2/3 mx-auto">
         <div class="flex flex-wrap">
         <h1 class="flex-auto text-xl font-semibold">
             {name}
