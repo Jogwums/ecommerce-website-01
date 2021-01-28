@@ -20,7 +20,16 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    
 }
+.checkout .main-table .cart-item{
+    background-color: linen;
+    padding: .5rem;
+
+    margin-top: 1rem;
+    border-radius: 3px;
+}
+
 table{
     width: 100%;
 }
@@ -79,17 +88,18 @@ img{
 .total-cart .btn_group .cart-btn{
     padding: 0 3rem;
 }
+
 @media (max-width: 420px){
    .checkout{
        width: 100%;
        min-height: max-content;
        padding: 0;
-       margin: 0 auto;
+       margin: 0;
 
        display: grid;
        grid-template-columns: 1fr;
 
-       transform: scale(.8);
+       transform: scale(.89);
    }
     .checkout .cart{
         width: 80%;

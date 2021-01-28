@@ -71,15 +71,15 @@ const Checkout = () => {
                                     <table className="btn_group" border="0" cellPadding="0" cellSpacing="0">
                                         <tbody>
                                             <tr>
-                                                <td className="cart-btn">
-                                                    <Button pay fontSmall full>
+                                                <td className="">
+                                                    <Button pay fontSmall >
                                                        <BtnLink onClick={() => history.push('/product')}> 
                                                           Continue Shopping 
                                                        </BtnLink>
                                                     </Button>
                                                     
                                                 </td>
-                                                <td className="cart-btn">
+                                                <td className="">
                                                     <Button pay fontSmall full>
                                                        <BtnLink to="/payment">
                                                          Check Out
