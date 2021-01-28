@@ -120,7 +120,7 @@ const ProductDetails = (props) => {
         </button>
         </div>
         <p class="text-sm text-gray-500">
-        Free shipping on all continental US orders.
+        <small>Free shipping on all locally made items</small>
         </p>
     </form>
     </div>
