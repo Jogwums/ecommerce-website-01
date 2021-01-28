@@ -1,151 +1,16 @@
-:root{
-    --primaryColor: #7555a1;
-    --secondaryColor: #F68B1E;
-}
-.products{
-    background-color: rebeccapurple;
-    color: white;
-    font-size: 2rem;   
-}
-.products-wrapper{
-    padding: 0;
-    margin: 0 auto;
-
-}
 .card{
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    flex-direction: row;
-    align-items: center;
-    justify-content:flex-start;
-    min-height: 100vh;
-    margin: 0 auto;
-    
-}
-.card-wrapper{
-    background-color: rgba(0,0,0,0.2);
-    padding: 2rem;
-    z-index: 1000;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: .5rem;
-}
-.card-content{
-    background-color:white;
-    color: purple;
+    grid-template-columns: repeat(1, 1fr);
+
     margin: 1rem auto;
-    display: flex;
-    flex-direction:column;
-    padding: 1rem;
+    padding: 1rem ;
 
-    border: 1px double purple;
-    border-radius: 4px;
-
-    cursor: pointer;
-}
-.products-wrapper:hover .card-content{
-    box-shadow:  3px 2px 3px rgba(0,0,0,0.3);
-}
-.card-content .details, .card-content:hover .details{
-    text-align: left;
-    box-shadow: none;
-
-}
-.card-title{
-    text-align: left;
-    font-weight: 600;
-    font-size: 2rem;
-
-    margin: 1rem;
-    color: #1a3263;
-}
-.card-image-wrapper{
-    width: 100%;
-    padding: 1rem auto;
-    display: flex;
-    justify-content: center;
-
-}
-.card-image-wrapper .card-image{
-    min-width: 240px;
-    height: auto;
-
-    max-width: 100%;
-}
-.card-price{
-    margin-top: 1rem;
-    font-size: 2rem;
-    color: purple;
-
-    font-weight: 600;
-
-    padding: 0; margin: 0 0 1rem 1rem;
-    border-top: 2px solid rgba(240, 238, 235, 0.5);
-    border-bottom: 2px solid rgba(240, 238, 235, 0.5);
-}
-.card-footer{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    margin-bottom: 0; margin-top: 1rem;
+    grid-gap: 1rem;
 }
 
-.btn{
-    margin: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: .5rem 1rem;
-    border-radius: 6px;
-    border: 2px solid var(--primaryColor);
-    cursor:pointer;
-}
-.btn-primary{
-    background-color: white;
-    color:  var(--primaryColor);
-}
-.btn-primary:hover{
-    border: 2px solid var(--primaryColor) ;
-    background-color: var(--primaryColor);
-    color:  #fff;
-}
-.btn-primary:focus{
-    background-color: lightgrey;
-    border: none;
-    outline: none;
-}
-.btn_group{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;   
-
-}
-
-@media (max-width: 480px){
-    .products-wrapper{
-        margin: 0 auto;
-    }
+@media (min-width: 480px){
     .card{
-        width: 100%;
-    }
-    .card-content{
-        padding: 1rem;
-        min-width: 255px;
-
-        max-width: 90%;
-    }
-    .card-title{
-        margin: 1rem 0 0 1rem;
-    }
-    .small{
-        padding: .45rem .52rem;
-
-    }
-    .btn_group button{
-        font-size: small;
-        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
