@@ -26,7 +26,6 @@
     background-color: linen;
     padding: .5rem;
 
-    margin-top: 1rem;
     border-radius: 3px;
 }
 
@@ -117,6 +116,10 @@ img{
         display: grid;
         grid-template-columns: 1fr;
 
+    }
+    .checkout .main-table .cart-item 
+    {
+        margin-top: 1rem;
     }
     td,th{
         width: max-content;
