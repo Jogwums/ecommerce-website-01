@@ -47,14 +47,11 @@ const Item = ({item, pos}) => {
                 <td class="pb-4 md:table-cell">
                     <img src={images} alt={name}/>
                 </td>
-                <td>
-
-                </td>
-                <td className="del-desc hidden pb-4">
+                <td className="del-desc hidden lg:table-cell pb-4">
                     {description}
                 </td>
-                <td className="quantity-group flex flex-col items-center">
-                    <div>
+                <td className="quantity-group items-center">
+                    <div className="lg:flex lg:flex-row items-center justify-center">
                     <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
                         <FaArrowAltCircleDown />
                     </span>
@@ -63,8 +60,8 @@ const Item = ({item, pos}) => {
                         <FaArrowAltCircleUp />
                     </span>
                     </div>
-                    <div>
-                        <button className="relative btn delete " onClick={() => handleRemoveCartItem(id) }>
+                    <div className="lg:hidden my-0 mx-0 ">
+                        <button className="relative btn delete mt-5" onClick={() => handleRemoveCartItem(id) }>
                             <FaTrash />
                         </button>
                     </div>
@@ -75,11 +72,11 @@ const Item = ({item, pos}) => {
                 <td>
                     {quantity * price}
                 </td>
-                {/* <td>
-                    <button className="relative btn delete " onClick={() => handleRemoveCartItem(id) }>
+                <td className="hidden lg:table-cell">
+                    <button className="btn delete my-0 mx-0" onClick={() => handleRemoveCartItem(id) }>
                         <FaTrash />
                     </button>
-                </td> */}
+                </td>
               </tr>
             </tbody>
         </table>
