@@ -37,11 +37,16 @@ const Checkout = () => {
                            <table className="checkout-header" border="0" cellPadding="0" cellSpacing="0">
                             <tbody>
                                 <tr>
-                                    <th>Product</th>
-                                    <th className="del-desc">Description</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th className="del-trash">Remove</th>
+                                    <th class="hidden md:table-cell"></th>
+                                    <th className=" md:table-cell">Product</th>
+                                    {/* <th className="hidden md:table-cell">Description</th> */}
+                                    <th class="lg:text-center text-left pl-5 lg:pl-0">
+                                        <span class="lg:hidden" title="Quantity">Qtd</span>
+                                        <span class="hidden lg:inline">Quantity</span>
+                                    </th>
+                                    <th className=" md:table-cell">Unit Price</th>
+                                    <th className=" md:table-cell">Total Price</th>
+                                    <th className="hidden md:table-cell">Remove</th>
                                 </tr>
                             </tbody>
                         </table>
@@ -68,7 +73,7 @@ const Checkout = () => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <table className="btn_group" border="0" cellPadding="0" cellSpacing="0">
+                                    <table className="btn_group flex sm:flex-col w-1/2" border="0" cellPadding="0" cellSpacing="0">
                                         <tbody>
                                             <tr>
                                                 <td className="">

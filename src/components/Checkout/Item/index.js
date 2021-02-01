@@ -44,10 +44,13 @@ const Item = ({item, pos}) => {
         <table className="cart-item" border="0" cellSpacing="0" cellPadding="10">
             <tbody>
               <tr key={pos}>
-                <td>
+                <td class="hidden pb-4 md:table-cell">
                     <img src={images} alt={name}/>
                 </td>
-                <td className="del-desc">
+                <td>
+                    
+                </td>
+                <td className="del-desc hidden pb-4">
                     {description}
                 </td>
                 <td className="quantity-group">
@@ -61,6 +64,9 @@ const Item = ({item, pos}) => {
                 </td>
                 <td>
                     {price}
+                </td>
+                <td>
+                    {quantity * price}
                 </td>
                 <td>
                     <button className="btn delete" onClick={() => handleRemoveCartItem(id) }>
