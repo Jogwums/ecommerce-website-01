@@ -44,16 +44,17 @@ const Item = ({item, pos}) => {
         <table className="cart-item" border="0" cellSpacing="0" cellPadding="10">
             <tbody>
               <tr key={pos}>
-                <td class="hidden pb-4 md:table-cell">
+                <td class="pb-4 md:table-cell">
                     <img src={images} alt={name}/>
                 </td>
                 <td>
-                    
+
                 </td>
                 <td className="del-desc hidden pb-4">
                     {description}
                 </td>
-                <td className="quantity-group">
+                <td className="quantity-group flex flex-col items-center">
+                    <div>
                     <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
                         <FaArrowAltCircleDown />
                     </span>
@@ -61,6 +62,12 @@ const Item = ({item, pos}) => {
                     <span className="btn arrow" onClick={() => handleAddProduct(item)}> 
                         <FaArrowAltCircleUp />
                     </span>
+                    </div>
+                    <div>
+                        <button className="relative btn delete " onClick={() => handleRemoveCartItem(id) }>
+                            <FaTrash />
+                        </button>
+                    </div>
                 </td>
                 <td>
                     {price}
@@ -68,11 +75,11 @@ const Item = ({item, pos}) => {
                 <td>
                     {quantity * price}
                 </td>
-                <td>
-                    <button className="btn delete" onClick={() => handleRemoveCartItem(id) }>
+                {/* <td>
+                    <button className="relative btn delete " onClick={() => handleRemoveCartItem(id) }>
                         <FaTrash />
                     </button>
-                </td>
+                </td> */}
               </tr>
             </tbody>
         </table>

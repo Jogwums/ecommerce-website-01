@@ -131,7 +131,8 @@ img{
     .quantity-group{
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        margin-top: 2rem;
+        /* justify-content: flex-end; */
     }
     .checkout .total-cart{
         font-size: smaller;

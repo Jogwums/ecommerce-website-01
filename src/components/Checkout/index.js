@@ -46,7 +46,9 @@ const Checkout = () => {
                                     </th>
                                     <th className=" md:table-cell">Unit Price</th>
                                     <th className=" md:table-cell">Total Price</th>
-                                    <th className="hidden md:table-cell">Remove</th>
+                                    
+                                    {/* <th className="hidden md:table-cell">Remove</th> */}
+                                    <th className="hidden text-right sm:table-cell"></th>
                                 </tr>
                             </tbody>
                         </table>
