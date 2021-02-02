@@ -73,7 +73,7 @@ const Item = ({item, pos}) => {
                     {quantity * price}
                 </td>
                 <td className="hidden lg:table-cell">
-                    <button className="btn delete my-0 mx-0" onClick={() => handleReduceProduct(item) }>
+                    <button className="btn delete my-0 mx-0 text-2xl" onClick={() => handleReduceProduct(item) }>
                         <FaTrash />
                     </button>
                 </td>
