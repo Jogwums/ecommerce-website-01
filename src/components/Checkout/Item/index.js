@@ -18,15 +18,6 @@ const Item = ({item, pos}) => {
         price,
     } = item;
 
-
-    const handleRemoveCartItem = (itemID) => {
-        dispatch(
-            removeCartItem({
-                itemID
-        })
-        )
-    }
-
     const handleAddProduct = (product) => {
         dispatch(
             addProduct(product)
@@ -36,6 +27,14 @@ const Item = ({item, pos}) => {
     const handleReduceProduct = (product) => {
         dispatch(
             reduceCartItem(product)
+        )
+    }
+
+    const handleRemoveCartItem = (itemID) => {
+        dispatch(
+            removeCartItem({
+                itemID
+        })
         )
     }
 
@@ -61,7 +60,7 @@ const Item = ({item, pos}) => {
                     </span>
                     </div>
                     <div className="lg:hidden my-0 mx-0 ">
-                        <button className="relative btn delete mt-5" onClick={() => handleRemoveCartItem(id) }>
+                        <button className="relative btn delete mt-5" onClick={() => handleReduceProduct(item)}>
                             <FaTrash />
                         </button>
                     </div>
@@ -73,7 +72,7 @@ const Item = ({item, pos}) => {
                     {quantity * price}
                 </td>
                 <td className="hidden lg:table-cell">
-                    <button className="btn delete my-0 mx-0" onClick={() => handleRemoveCartItem(id) }>
+                    <button className="btn delete my-0 mx-0" onClick={() => handleReduceProduct(item) }>
                         <FaTrash />
                     </button>
                 </td>

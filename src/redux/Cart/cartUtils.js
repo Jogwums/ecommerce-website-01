@@ -36,7 +36,8 @@ export const handleRemoveCartItem = ({
     prevCartItems,
     cartItemToRemove
 }) => {
-    return prevCartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    const itemToDelete = prevCartItems.find(cartItem => cartItem.id === cartItemToRemove.id)
+    return prevCartItems.filter(item => item.id !== itemToDelete.id)
 }
  
 export const handleReduceCartItem = ({
