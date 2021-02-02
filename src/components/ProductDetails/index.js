@@ -11,13 +11,13 @@ import { addProduct } from '../../redux/Cart/cartActions'
 import { useRef } from 'react-redux'
 
 const mapState = (state) => ({
-    productSingle: state.products.product
-
+    productSingle: state.products.product,
+    cartDataAll: state.cartData
 })
 
 const ProductDetails = (props) => {
-    const { productSingle } = useSelector(mapState);
-    // const dispatch = useDispatch();
+    const { productSingle, cartDataAll } = useSelector(mapState);
+    const dispatch = useDispatch();
     const history = useHistory();
 
     console.log(['ProductDets:',productSingle])
@@ -33,7 +33,14 @@ const ProductDetails = (props) => {
         price,
     } = productSingle; 
 
-
+    const handleAddToCart = async (productData) => {
+        if(!productData){}
+        await dispatch(
+            addProduct({...productData, ...cartDataAll}),
+            history.push('/cart')
+        )
+    } 
+    // const handleAddProductToCart = (product) => {}
 
     return (
         // <div className="product-page">
@@ -108,10 +115,14 @@ const ProductDetails = (props) => {
         </div>
         <div class="flex space-x-3 mb-4 text-sm font-medium">
         <div class="flex-1 flex space-x-3">
-            <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white" type="submit">Buy now</button>
+            <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white" 
+                    type="button"
+                    onClick={() => handleAddToCart(productSingle) }>
+                Buy now
+            </button>
             <button class="w-1/2 flex items-center justify-center rounded-md border border-gray-300" 
                     type="button"
-                     onClick={() => history.push('/cart')}>Add to bag</button>
+                     onClick={() => handleAddToCart(productSingle)}>Add to Cart</button>
         </div>
         <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-gray-400 border border-gray-300" type="button" aria-label="like">
             <svg width="20" height="20" fill="currentColor">
