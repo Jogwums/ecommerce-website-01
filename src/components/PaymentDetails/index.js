@@ -156,6 +156,7 @@ const PaymentDetails = () => {
                     </div>
 
                     </div>
+                    {/*
                     <div className="group">
                         <h2>
                             Billing Address
@@ -225,7 +226,7 @@ const PaymentDetails = () => {
                             />
                         </div>
                     </div>
-
+                            */}
                     <div className="group">
                         <h2>
                             Card Details
