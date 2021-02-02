@@ -40,38 +40,9 @@ const ProductDetails = (props) => {
             history.push('/cart')
         )
     } 
-    // const handleAddProductToCart = (product) => {}
+    
 
     return (
-        // <div className="product-page">
-        //     <div className="image-wrapper">
-        //         <img src={images} alt="images"/>
-        //     </div>
-        //     <div className="product-page__details">
-        //         <ul>
-        //             <li>
-        //                 <h1>{name}</h1>
-        //             </li>
-        //             <li>
-        //                 <span>{price}</span>
-        //             </li>
-        //             <li>
-        //                 <div>
-        //                     <button className="btn btn-primary"
-        //                         onClick={() => history.push('/cart')}  >
-        //                         Add to Cart 
-        //                     </button>
-        //                 </div>
-        //             </li>
-        //             <li>
-        //                 <span className="desc" 
-        //                     dangerouslySetInnerHTML={{__html: desc}}>
-
-        //                 </span>
-        //             </li>
-        //         </ul>
-        //     </div>
-        // </div>
         <div class="flex flex-col sm:flex-row mt-3">
         <div class="flex-auto w-2/3 sm:w-52 my-0 mx-auto">
             <img src={images} alt={desc} class=" inset-0 w-full h-full object-cover" />

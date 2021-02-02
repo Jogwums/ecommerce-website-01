@@ -30,14 +30,13 @@ const Item = ({item, pos}) => {
         )
     }
 
-    const handleRemoveCartItem = (itemID) => {
-        dispatch(
-            removeCartItem({
-                itemID
-        })
-        )
-    }
-
+    // const handleRemoveCartItem = (itemID) => {
+    //     dispatch(
+    //         removeCartItem({
+    //             itemID
+    //     })
+    //     )
+    // }
 
     return (
         <table className="cart-item" border="0" cellSpacing="0" cellPadding="10">
@@ -49,15 +48,17 @@ const Item = ({item, pos}) => {
                 <td className="del-desc hidden lg:table-cell pb-4">
                     {description}
                 </td>
-                <td className="quantity-group items-center">
+                <td className="quantity-group flex flex-col items-center py-0">
                     <div className="lg:flex lg:flex-row items-center justify-center">
-                    <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
-                        <FaArrowAltCircleDown />
-                    </span>
-                    <span>{quantity}</span>
-                    <span className="btn arrow" onClick={() => handleAddProduct(item)}> 
-                        <FaArrowAltCircleUp />
-                    </span>
+                        <span className="btn arrow" onClick={() => handleReduceProduct(item)}> 
+                            <FaArrowAltCircleDown />
+                        </span>
+                        <span className="py-0 px-3">
+                            {quantity}
+                        </span>
+                        <span className="btn arrow" onClick={() => handleAddProduct(item)}> 
+                            <FaArrowAltCircleUp />
+                        </span>
                     </div>
                     <div className="lg:hidden my-0 mx-0 ">
                         <button className="relative btn delete mt-5" onClick={() => handleReduceProduct(item)}>
