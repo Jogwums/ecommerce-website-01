@@ -5,8 +5,6 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 import {fetchProduct, setProduct } from '../../redux/Products/productActions' 
 import { addProduct } from '../../redux/Cart/cartActions'
 
-// import './styles.css'
-
 //import handle add to cart
 import { useRef } from 'react-redux'
 
