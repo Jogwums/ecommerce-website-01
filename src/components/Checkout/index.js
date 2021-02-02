@@ -75,18 +75,18 @@ const Checkout = () => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <table className="btn_group flex sm:flex-col w-1/2" border="0" cellPadding="0" cellSpacing="0">
+                                    <table className="btn_group " border="0" cellPadding="0" cellSpacing="0">
                                         <tbody>
                                             <tr>
-                                                <td className="">
-                                                    <Button pay fontSmall >
+                                                <td className="w-1/2">
+                                                    <Button pay fontSmall full>
                                                        <BtnLink onClick={() => history.push('/product')}> 
                                                           Continue Shopping 
                                                        </BtnLink>
                                                     </Button>
                                                     
                                                 </td>
-                                                <td className="">
+                                                <td className="w-1/2">
                                                     <Button pay fontSmall full>
                                                        <BtnLink to="/payment">
                                                          Check Out
